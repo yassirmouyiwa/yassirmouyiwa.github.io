@@ -238,6 +238,17 @@ img, svg { max-width: 100%; display: block; }
 .meta-item a { color: var(--fg-soft); border-bottom: 1px solid var(--fg-subtle); font-weight: 500; }
 .meta-item a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
+.hero-profile {
+    margin-bottom: 24px;
+    opacity: 0; animation: fadeInUp 0.6s ease forwards 1.25s;
+}
+.profile-img {
+    width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--accent); box-shadow: var(--glow);
+    transition: var(--transition);
+}
+.profile-img:hover { box-shadow: var(--glow-strong); transform: scale(1.05); }
+
 .hero-buttons {
     display: flex; gap: 16px; margin-bottom: 60px; flex-wrap: wrap;
     opacity: 0; animation: fadeInUp 0.6s ease forwards 1.3s;
