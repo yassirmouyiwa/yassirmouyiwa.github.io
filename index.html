@@ -1,286 +1,618 @@
-<!doctype html>
-<html lang="fr"
-      data-theme="dark"
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark"
       data-title-fr="Yassir Mouyiwa — Cybersecurity & Embedded Systems"
       data-title-en="Yassir Mouyiwa — Cybersecurity & Embedded Systems">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
-
-  <title>Yassir Mouyiwa — Cybersecurity & Embedded Systems</title>
-  <meta name="description" content="Moussa Yassir Mouyiwa — étudiant ENSA Tétouan, cybersécurité offensive et défensive, systèmes embarqués, IA appliquée à la sécurité.">
-  <meta name="author" content="Moussa Yassir Mouyiwa">
-
-  <meta property="og:title" content="Yassir Mouyiwa — Cybersecurity & Embedded Systems">
-  <meta property="og:description" content="ENSA Tétouan. Offensive/defensive security, embedded, ai/sec.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yassirmouyiwa.github.io">
-  <link rel="canonical" href="https://yassirmouyiwa.github.io">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2316161a'/%3E%3Ctext y='44' x='32' text-anchor='middle' font-size='32' font-family='Inter,sans-serif' font-weight='600' font-style='italic' fill='%23c2906f'%3Ey%3C/text%3E%3C/svg%3E">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yassir Mouyiwa — Cybersecurity & Embedded Systems</title>
+    <meta name="description" content="Moussa Yassir Mouyiwa — étudiant ENSA Tétouan, cybersécurité offensive et défensive, systèmes embarqués, IA appliquée à la sécurité.">
+    <meta name="author" content="Moussa Yassir Mouyiwa">
+    <meta property="og:title" content="Yassir Mouyiwa — Cybersecurity & Embedded Systems">
+    <meta property="og:description" content="ENSA Tétouan. Offensive/defensive security, embedded, ai/sec.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yassirmouyiwa.github.io">
+    <link rel="canonical" href="https://yassirmouyiwa.github.io">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a0f'/%3E%3Ctext y='44' x='32' text-anchor='middle' font-size='32' font-family='Inter,sans-serif' font-weight='600' fill='%2300ff88'%3Ey%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="#top" class="brand">Yassir Mouyiwa</a>
-
-    <div class="nav-links">
-      <a href="#focus" lang-block="fr">Domaines</a>
-      <a href="#focus" lang-block="en">Areas</a>
-      <a href="#projects">Projets</a>
-      <a href="https://github.com/yassirmouyiwa" target="_blank" rel="noopener">GitHub ↗</a>
-      <a href="#contact">Contact</a>
-    </div>
-
-    <div class="nav-controls">
-      <button class="icon-btn" data-lang-toggle aria-label="Switch language">EN</button>
-      <button class="icon-btn" data-theme-toggle aria-label="Switch theme">☼</button>
-    </div>
-  </div>
-</nav>
-
-<main id="top">
-
-  <!-- ========== HERO ========== -->
-  <section class="hero">
-    <div class="container">
-
-      <div class="eyebrow reveal">
-        <span class="dot"></span>
-        <span lang-block="fr">Disponible — stage / PFE 2026</span>
-        <span lang-block="en">Available — internship / capstone 2026</span>
-      </div>
-
-      <h1 class="reveal" lang-block="fr">
-        Construire et casser, <span class="accent">au niveau silicium et au niveau réseau.</span>
-      </h1>
-      <h1 class="reveal" lang-block="en">
-        Build things and break them, <span class="accent">at the silicon and network layer.</span>
-      </h1>
-
-      <p class="hero-tagline reveal" lang-block="fr">
-        Étudiant ingénieur à l'ENSA Tétouan. J'apprends en construisant — topologies réseau à la main, firmwares embarqués bas niveau, dashboards d'audit. La sécurité offensive me sert à comprendre la défensive.
-      </p>
-      <p class="hero-tagline reveal" lang-block="en">
-        Engineering student at ENSA Tétouan. I learn by building — hand-built network topologies, low-level embedded firmware, audit dashboards. Offensive security teaches me defensive thinking.
-      </p>
-
-      <div class="hero-meta reveal">
-        <div class="item"><span class="label" lang-block="fr">École</span><span class="label" lang-block="en">School</span><strong>ENSA Tétouan · GCSE</strong></div>
-        <div class="item"><span class="label" lang-block="fr">Localisation</span><span class="label" lang-block="en">Location</span><strong>Tétouan, MA</strong></div>
-        <div class="item"><span class="label">GitHub</span><a href="https://github.com/yassirmouyiwa" target="_blank" rel="noopener">@yassirmouyiwa</a></div>
-      </div>
-
-      <div class="cta-group reveal">
-        <a href="#projects" class="btn btn-primary">
-          <span lang-block="fr">Voir les projets</span>
-          <span lang-block="en">See projects</span>
-          <span class="arrow">→</span>
-        </a>
-        <a href="mailto:yassirmoussa754@gmail.com" class="btn">
-          <span lang-block="fr">Me contacter</span>
-          <span lang-block="en">Get in touch</span>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========== FOCUS ========== -->
-  <section id="focus">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-tag" lang-block="fr">Domaines</div>
-        <div class="section-tag" lang-block="en">Areas</div>
-        <h2 lang-block="fr">Là où je passe mon temps.</h2>
-        <h2 lang-block="en">Where I spend my time.</h2>
-      </div>
-
-      <div class="focus-grid">
-
-        <article class="focus-card">
-          <div class="num">01</div>
-          <h3>Cybersecurity</h3>
-          <p lang-block="fr">
-            Sécurité offensive et défensive. Du pentest web aux attaques sans-fil, en apprenant par la construction de labs isolés et le démontage de protocoles.
-          </p>
-          <p lang-block="en">
-            Offensive and defensive security. From web pentest to wireless attacks — learning by building isolated labs and taking protocols apart.
-          </p>
-          <ul class="topics">
-            <li>Web</li>
-            <li>Wi-Fi / RF</li>
-            <li>Linux hardening</li>
-            <li>Network</li>
-          </ul>
-        </article>
-
-        <article class="focus-card">
-          <div class="num">02</div>
-          <h3 lang-block="fr">Systèmes embarqués</h3>
-          <h3 lang-block="en">Embedded systems</h3>
-          <p lang-block="fr">
-            Programmation bas niveau, protocoles série, microcontrôleurs ESP32 / AVR. L'intersection matériel-sécurité est ma zone de confort.
-          </p>
-          <p lang-block="en">
-            Low-level programming, serial protocols, ESP32 / AVR microcontrollers. The hardware-security intersection is my comfort zone.
-          </p>
-          <ul class="topics">
-            <li>C / C++</li>
-            <li>ESP-IDF</li>
-            <li>UART · SPI · I²C</li>
-            <li>802.11</li>
-          </ul>
-        </article>
-
-        <article class="focus-card">
-          <div class="num">03</div>
-          <h3 lang-block="fr">IA &amp; sécurité</h3>
-          <h3 lang-block="en">AI &amp; security</h3>
-          <p lang-block="fr">
-            Intérêt exploratoire pour le machine learning appliqué à la détection d'intrusions, l'analyse de malwares et le fuzzing assisté.
-          </p>
-          <p lang-block="en">
-            Exploratory interest in machine learning applied to intrusion detection, malware analysis and assisted fuzzing.
-          </p>
-          <ul class="topics">
-            <li>Python</li>
-            <li>scikit-learn</li>
-            <li>Anomaly detection</li>
-            <li>LLMs for sec</li>
-          </ul>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PROJECTS ========== -->
-  <section id="projects">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-tag">Projets</div>
-        <h2 lang-block="fr">Sélection de travaux récents.</h2>
-        <h2 lang-block="en">Selected recent work.</h2>
-        <p class="section-sub" lang-block="fr">
-          Tous les dépôts publics sont sur <a href="https://github.com/yassirmouyiwa?tab=repositories" target="_blank" rel="noopener">github.com/yassirmouyiwa</a>. Pour les projets privés, écris-moi.
-        </p>
-        <p class="section-sub" lang-block="en">
-          All public repos at <a href="https://github.com/yassirmouyiwa?tab=repositories" target="_blank" rel="noopener">github.com/yassirmouyiwa</a>. Email me for access to private ones.
-        </p>
-      </div>
-
-      <div class="projects">
-
-        <article class="project-card" data-href="projects/cisco-routing.html">
-          <div class="head">
-            <span class="num">01</span>
-            <span class="badge badge-public">● Public</span>
-          </div>
-          <div class="title-line">
-            <h3>Cisco Routing — 4 protocoles comparés</h3>
-          </div>
-          <p class="desc" lang-block="fr">
-            Quatre TP du module <em>Réseaux Avancés</em> à l'ENSA Tétouan, sous Packet Tracer : routage statique, RIPv1, RIPv2 + VLSM, OSPFv2 mono-zone. Configurations IOS complètes, DHCP, analyse de convergence et synthèse comparative des 4 protocoles.
-          </p>
-          <p class="desc" lang-block="en">
-            Four labs from the <em>Advanced Networks</em> module at ENSA Tétouan, on Packet Tracer: static routing, RIPv1, RIPv2 + VLSM, OSPFv2 single-area. Full IOS configurations, DHCP, convergence analysis and a comparative summary across the 4 protocols.
-          </p>
-          <div class="footer">
-            <div class="tag-list">
-              <span class="tag">Cisco IOS</span>
-              <span class="tag">Packet Tracer</span>
-              <span class="tag">RIP</span>
-              <span class="tag">OSPF</span>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-text">
+                <span class="loader-bracket">[</span>
+                <span class="loader-word" id="loader-word">INITIALIZING</span>
+                <span class="loader-dots">...</span>
+                <span class="loader-bracket">]</span>
             </div>
-            <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer" target="_blank" rel="noopener" class="gh-ref">
-              github.com/yassirmouyiwa/cisco-routing-packet-tracer <span class="arr">↗</span>
-            </a>
-          </div>
-        </article>
-
-        <article class="project-card" data-href="projects/esp32-wifi-auditor.html">
-          <div class="head">
-            <span class="num">02</span>
-            <span class="badge badge-private">⏿ Private</span>
-          </div>
-          <div class="title-line">
-            <h3>ESP32 Wi-Fi Auditor</h3>
-          </div>
-          <p class="desc" lang-block="fr">
-            Plateforme d'audit Wi-Fi pédagogique full-stack. Dashboard <strong>Next.js 16 / React 19 / Prisma 6 / SQLite</strong> piloté par un <strong>firmware ESP32-S3</strong> (capture promiscuous, génération de PCAP Wireshark-clean, deauth ciblé, vérification de mots de passe asynchrone). 14 routes API, 8 panels métier, 9 modèles BDD.
-          </p>
-          <p class="desc" lang-block="en">
-            Full-stack educational Wi-Fi audit platform. <strong>Next.js 16 / React 19 / Prisma 6 / SQLite</strong> dashboard driven by an <strong>ESP32-S3 firmware</strong> (promiscuous capture, Wireshark-clean PCAP generation, targeted deauth, async password verification). 14 API routes, 8 dashboard panels, 9 DB models.
-          </p>
-          <div class="footer">
-            <div class="tag-list">
-              <span class="tag">Next.js 16</span>
-              <span class="tag">Prisma</span>
-              <span class="tag">ESP32-S3</span>
-              <span class="tag">Tailwind</span>
-              <span class="tag">802.11</span>
+            <div class="loader-bar">
+                <div class="loader-bar-fill" id="loader-bar-fill"></div>
             </div>
-            <a href="mailto:yassirmoussa754@gmail.com?subject=Acc%C3%A8s%20demand%C3%A9%20%E2%80%94%20esp32-wifi-auditor" class="gh-ref is-private">
-              ⏿ <span lang-block="fr">demander l'accès</span><span lang-block="en">request access</span> <span class="arr">↗</span>
+        </div>
+    </div>
+
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#top" class="nav-logo">
+                <span class="logo-bracket"><</span>
+                <span class="logo-text">YM</span>
+                <span class="logo-bracket">/></span>
             </a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CONTACT ========== -->
-  <section id="contact">
-    <div class="container">
-
-      <div class="contact-block">
-        <div>
-          <div class="section-tag">Contact</div>
-          <h2 lang-block="fr">Un projet, un stage, une question ?</h2>
-          <h2 lang-block="en">A project, an internship, a question?</h2>
-          <p lang-block="fr">
-            Ouvert aux messages. Pour les sujets sensibles — divulgation de vulnérabilité, accès à un dépôt privé —, l'email reste préférable.
-          </p>
-          <p lang-block="en">
-            Open to messages. For sensitive matters — vulnerability disclosure, private-repo access —, email is preferred.
-          </p>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#focus" class="nav-link" data-section="focus"><span class="nav-index">01.</span> <span lang-block="fr">Domaines</span><span lang-block="en">Areas</span></a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills"><span class="nav-index">02.</span> Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects"><span class="nav-index">03.</span> <span lang-block="fr">Projets</span><span lang-block="en">Projects</span></a></li>
+                <li><a href="#experience" class="nav-link" data-section="experience"><span class="nav-index">04.</span> <span lang-block="fr">Parcours</span><span lang-block="en">Experience</span></a></li>
+                <li><a href="#contact" class="nav-link nav-cta" data-section="contact"><span class="nav-index">05.</span> Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="icon-btn" data-lang-toggle aria-label="Switch language">EN</button>
+            </div>
         </div>
-        <div class="contact-links">
-          <div class="item">
-            <span class="label">Email</span>
-            <a href="mailto:yassirmoussa754@gmail.com">yassirmoussa754@gmail.com →</a>
-          </div>
-          <div class="item">
-            <span class="label">GitHub</span>
-            <a href="https://github.com/yassirmouyiwa" target="_blank" rel="noopener">github.com/yassirmouyiwa →</a>
-          </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="top" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-greeting typing-effect">
+                <span class="greeting-prefix">root@portfolio:~$</span>
+                <span class="greeting-text" lang-block="fr">Bonjour, je suis</span>
+                <span class="greeting-text" lang-block="en">Hello, I am</span>
+            </div>
+            <h1 class="hero-name glitch" data-text="Yassir Mouyiwa">Yassir Mouyiwa</h1>
+            <h2 class="hero-title">
+                <span class="title-text" lang-block="fr">Je construis et je casse, <span class="highlight" id="typed-text"></span></span>
+                <span class="title-text" lang-block="en">I build and break, <span class="highlight" id="typed-text"></span></span>
+                <span class="title-cursor">|</span>
+            </h2>
+            <p class="hero-description" lang-block="fr">
+                Étudiant ingénieur à l'ENSA Tétouan, passionné par la cybersécurité offensive et défensive, 
+                les systèmes embarqués et l'IA appliquée à la sécurité. J'apprends en construisant.
+            </p>
+            <p class="hero-description" lang-block="en">
+                Engineering student at ENSA Tétouan, passionate about offensive and defensive cybersecurity, 
+                embedded systems, and AI applied to security. I learn by building.
+            </p>
+            <div class="hero-meta reveal">
+                <div class="meta-item"><i class="fas fa-graduation-cap"></i> <span lang-block="fr">École</span><span lang-block="en">School</span> <strong>ENSA Tétouan · GCSE</strong></div>
+                <div class="meta-item"><i class="fas fa-map-marker-alt"></i> Tétouan, MA</div>
+                <div class="meta-item"><i class="fab fa-github"></i> <a href="https://github.com/yassirmouyiwa" target="_blank" rel="noopener">@yassirmouyiwa</a></div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <span lang-block="fr">Voir les projets</span>
+                    <span lang-block="en">View Projects</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="mailto:yassirmoussa754@gmail.com" class="btn btn-secondary">
+                    <span lang-block="fr">Me contacter</span>
+                    <span lang-block="en">Get in Touch</span>
+                </a>
+            </div>
         </div>
-      </div>
+        <div class="hero-terminal">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn red"></span>
+                        <span class="terminal-btn yellow"></span>
+                        <span class="terminal-btn green"></span>
+                    </div>
+                    <span class="terminal-title">yassir@kali:~</span>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">yassir@kali:~$</span>
+                        <span class="terminal-command" id="terminal-cmd"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- Focus / Domaines Section -->
+    <section id="focus" class="section focus-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">01.</span>
+                <span class="section-text" lang-block="fr">Domaines</span>
+                <span class="section-text" lang-block="en">Areas</span>
+                <span class="section-line"></span>
+            </h2>
+            <div class="focus-grid">
+                <article class="focus-card" data-aos="fade-up">
+                    <div class="focus-icon"><i class="fas fa-user-secret"></i></div>
+                    <h3>Cybersecurity</h3>
+                    <p lang-block="fr">
+                        Sécurité offensive et défensive. Du pentest web aux attaques sans-fil, en apprenant par la construction de labs isolés et le démontage de protocoles.
+                    </p>
+                    <p lang-block="en">
+                        Offensive and defensive security. From web pentest to wireless attacks — learning by building isolated labs and taking protocols apart.
+                    </p>
+                    <ul class="topics">
+                        <li>Web</li>
+                        <li>Wi-Fi / RF</li>
+                        <li>Linux hardening</li>
+                        <li>Network</li>
+                    </ul>
+                </article>
 
-</main>
+                <article class="focus-card" data-aos="fade-up">
+                    <div class="focus-icon"><i class="fas fa-microchip"></i></div>
+                    <h3 lang-block="fr">Systèmes embarqués</h3>
+                    <h3 lang-block="en">Embedded systems</h3>
+                    <p lang-block="fr">
+                        Programmation bas niveau, protocoles série, microcontrôleurs ESP32 / AVR. L'intersection matériel-sécurité est ma zone de confort.
+                    </p>
+                    <p lang-block="en">
+                        Low-level programming, serial protocols, ESP32 / AVR microcontrollers. The hardware-security intersection is my comfort zone.
+                    </p>
+                    <ul class="topics">
+                        <li>C / C++</li>
+                        <li>ESP-IDF</li>
+                        <li>UART · SPI · I²C</li>
+                        <li>802.11</li>
+                    </ul>
+                </article>
 
-<footer>
-  <div class="container">
-    <span>© <span data-year></span> Moussa Yassir Mouyiwa</span>
-    <span class="hide-mobile">ENSA Tétouan · GCSE</span>
-    <a href="https://github.com/yassirmouyiwa" target="_blank" rel="noopener">github.com/yassirmouyiwa</a>
-  </div>
-</footer>
+                <article class="focus-card" data-aos="fade-up">
+                    <div class="focus-icon"><i class="fas fa-brain"></i></div>
+                    <h3 lang-block="fr">IA & sécurité</h3>
+                    <h3 lang-block="en">AI & security</h3>
+                    <p lang-block="fr">
+                        Intérêt exploratoire pour le machine learning appliqué à la détection d'intrusions, l'analyse de malwares et le fuzzing assisté.
+                    </p>
+                    <p lang-block="en">
+                        Exploratory interest in machine learning applied to intrusion detection, malware analysis and assisted fuzzing.
+                    </p>
+                    <ul class="topics">
+                        <li>Python</li>
+                        <li>scikit-learn</li>
+                        <li>Anomaly detection</li>
+                        <li>LLMs for sec</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
 
-<script src="assets/js/main.js"></script>
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">02.</span>
+                <span class="section-text" lang-block="fr">Compétences</span>
+                <span class="section-text" lang-block="en">Skills</span>
+                <span class="section-line"></span>
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon"><i class="fas fa-shield-halved"></i></div>
+                        <h3>Security</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Penetration Testing</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Network Security</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="82"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Wi-Fi / RF Attacks</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Linux Hardening</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="78"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon"><i class="fas fa-microchip"></i></div>
+                        <h3 lang-block="fr">Embarqué</h3>
+                        <h3 lang-block="en">Embedded</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">ESP32 / ESP-IDF</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C / C++</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">UART · SPI · I²C</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="82"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">802.11 Protocol</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="78"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon"><i class="fas fa-code"></i></div>
+                        <h3 lang-block="fr">Programmation</h3>
+                        <h3 lang-block="en">Programming</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Bash / Shell</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">TypeScript / Next.js</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">scikit-learn</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="65"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon"><i class="fas fa-tools"></i></div>
+                        <h3 lang-block="fr">Outils</h3>
+                        <h3 lang-block="en">Tools</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Cisco IOS / Packet Tracer</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Wireshark / Nmap</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="82"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Git / Docker</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="78"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Prisma / SQLite</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="72"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tech-icons">
+                <div class="tech-icon" title="Linux"><i class="fab fa-linux"></i></div>
+                <div class="tech-icon" title="Python"><i class="fab fa-python"></i></div>
+                <div class="tech-icon" title="GitHub"><i class="fab fa-github"></i></div>
+                <div class="tech-icon" title="Docker"><i class="fab fa-docker"></i></div>
+                <div class="tech-icon" title="GitLab"><i class="fab fa-gitlab"></i></div>
+                <div class="tech-icon" title="ESP32"><i class="fas fa-microchip"></i></div>
+                <div class="tech-icon" title="Raspberry Pi"><i class="fab fa-raspberry-pi"></i></div>
+                <div class="tech-icon" title="Cisco"><i class="fas fa-network-wired"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">03.</span>
+                <span class="section-text" lang-block="fr">Projets</span>
+                <span class="section-text" lang-block="en">Projects</span>
+                <span class="section-line"></span>
+            </h2>
+            <p class="section-sub" lang-block="fr">
+                Tous les dépôts publics sont sur <a href="https://github.com/yassirmouyiwa?tab=repositories" target="_blank" rel="noopener">github.com/yassirmouyiwa</a>. Pour les projets privés, écris-moi.
+            </p>
+            <p class="section-sub" lang-block="en">
+                All public repos at <a href="https://github.com/yassirmouyiwa?tab=repositories" target="_blank" rel="noopener">github.com/yassirmouyiwa</a>. Email me for access to private ones.
+            </p>
+
+            <div class="projects-grid">
+                <!-- Project 1: Cisco Routing -->
+                <article class="project-card" data-category="networking">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer" target="_blank" rel="noopener" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="projects/cisco-routing.html" class="project-link" title="Details"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon-display">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="badge badge-public"><span lang-block="fr">● Public</span><span lang-block="en">● Public</span></span>
+                        </div>
+                        <h3 class="project-title">Cisco Routing — <span lang-block="fr">4 protocoles comparés</span><span lang-block="en">4 protocols compared</span></h3>
+                        <p class="project-description" lang-block="fr">
+                            Quatre TP du module <em>Réseaux Avancés</em> à l'ENSA Tétouan, sous Packet Tracer : routage statique, RIPv1, RIPv2 + VLSM, OSPFv2 mono-zone. Configurations IOS complètes, DHCP, analyse de convergence.
+                        </p>
+                        <p class="project-description" lang-block="en">
+                            Four labs from the <em>Advanced Networks</em> module at ENSA Tétouan, on Packet Tracer: static routing, RIPv1, RIPv2 + VLSM, OSPFv2 single-area. Full IOS configurations, DHCP, convergence analysis.
+                        </p>
+                        <div class="project-footer">
+                            <div class="tag-list">
+                                <span class="tag">Cisco IOS</span>
+                                <span class="tag">Packet Tracer</span>
+                                <span class="tag">RIP</span>
+                                <span class="tag">OSPF</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: ESP32 WiFi Auditor -->
+                <article class="project-card" data-category="security">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="mailto:yassirmoussa754@gmail.com?subject=Accès demandé — esp32-wifi-auditor" class="project-link" title="Request Access"><i class="fas fa-lock"></i></a>
+                                <a href="projects/esp32-wifi-auditor.html" class="project-link" title="Details"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon-display">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="badge badge-private">⏿ <span lang-block="fr">Privé</span><span lang-block="en">Private</span></span>
+                        </div>
+                        <h3 class="project-title">ESP32 Wi-Fi Auditor</h3>
+                        <p class="project-description" lang-block="fr">
+                            Plateforme d'audit Wi-Fi pédagogique full-stack. Dashboard <strong>Next.js / React / Prisma / SQLite</strong> piloté par un <strong>firmware ESP32-S3</strong> (capture promiscuous, PCAP Wireshark-clean, deauth ciblé, vérification de mots de passe). 14 routes API, 8 panels métier.
+                        </p>
+                        <p class="project-description" lang-block="en">
+                            Full-stack educational Wi-Fi audit platform. <strong>Next.js / React / Prisma / SQLite</strong> dashboard driven by an <strong>ESP32-S3 firmware</strong> (promiscuous capture, Wireshark-clean PCAP generation, targeted deauth, async password verification). 14 API routes, 8 dashboard panels.
+                        </p>
+                        <div class="project-footer">
+                            <div class="tag-list">
+                                <span class="tag">Next.js</span>
+                                <span class="tag">Prisma</span>
+                                <span class="tag">ESP32-S3</span>
+                                <span class="tag">802.11</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience / Timeline Section -->
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">04.</span>
+                <span class="section-text" lang-block="fr">Parcours</span>
+                <span class="section-text" lang-block="en">Experience</span>
+                <span class="section-line"></span>
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">2022 — Present</span>
+                            <span class="timeline-type education">Education</span>
+                        </div>
+                        <h3 class="timeline-title" lang-block="fr">Ingénieur Génie des Connaissances et Systèmes Embarqués</h3>
+                        <h3 class="timeline-title" lang-block="en">Engineering — Knowledge & Embedded Systems</h3>
+                        <h4 class="timeline-company">
+                            <i class="fas fa-graduation-cap"></i> ENSA Tétouan (École Nationale des Sciences Appliquées)
+                        </h4>
+                        <ul class="timeline-description">
+                            <li lang-block="fr">Spécialisation : cybersécurité offensive et défensive, systèmes embarqués</li>
+                            <li lang-block="en">Focus: offensive/defensive cybersecurity, embedded systems</li>
+                            <li lang-block="fr">Projets pratiques : routage réseau (Cisco), audit Wi-Fi (ESP32), dashboards d'audit</li>
+                            <li lang-block="en">Hands-on projects: network routing (Cisco), Wi-Fi audit (ESP32), audit dashboards</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Cybersecurity</span>
+                            <span>Embedded</span>
+                            <span>Networking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">2025 — 2026</span>
+                            <span class="timeline-type full-time">Project</span>
+                        </div>
+                        <h3 class="timeline-title">ESP32 Wi-Fi Auditor</h3>
+                        <h4 class="timeline-company">
+                            <i class="fas fa-microchip"></i> Full-Stack Security Platform
+                        </h4>
+                        <ul class="timeline-description">
+                            <li lang-block="fr">Firmware ESP32-S3 : capture promiscuous, génération PCAP, deauth ciblé</li>
+                            <li lang-block="en">ESP32-S3 firmware: promiscuous capture, PCAP generation, targeted deauth</li>
+                            <li lang-block="fr">Dashboard Next.js/React avec Prisma/SQLite, 14 routes API, 8 panels</li>
+                            <li lang-block="en">Next.js/React dashboard with Prisma/SQLite, 14 API routes, 8 panels</li>
+                            <li lang-block="fr">Vérification de mots de passe Wi-Fi asynchrone</li>
+                            <li lang-block="en">Asynchronous Wi-Fi password verification</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>ESP32-S3</span>
+                            <span>Next.js</span>
+                            <span>802.11</span>
+                            <span>Prisma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">2025 — 2026</span>
+                            <span class="timeline-type contract">Project</span>
+                        </div>
+                        <h3 class="timeline-title" lang-block="fr">Cisco Routing — 4 protocoles comparés</h3>
+                        <h3 class="timeline-title" lang-block="en">Cisco Routing — 4 protocols compared</h3>
+                        <h4 class="timeline-company">
+                            <i class="fas fa-network-wired"></i> <span lang-block="fr">Réseaux Avancés — ENSA Tétouan</span><span lang-block="en">Advanced Networks — ENSA Tétouan</span>
+                        </h4>
+                        <ul class="timeline-description">
+                            <li lang-block="fr">Quatre TPs sous Packet Tracer : routage statique, RIPv1, RIPv2+VLSM, OSPFv2</li>
+                            <li lang-block="en">Four labs on Packet Tracer: static routing, RIPv1, RIPv2+VLSM, OSPFv2</li>
+                            <li lang-block="fr">Configurations IOS complètes, DHCP, analyse de convergence</li>
+                            <li lang-block="en">Full IOS configurations, DHCP, convergence analysis</li>
+                            <li lang-block="fr">Synthèse comparative des 4 protocoles</li>
+                            <li lang-block="en">Comparative summary across all 4 protocols</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Cisco IOS</span>
+                            <span>Packet Tracer</span>
+                            <span>RIP</span>
+                            <span>OSPF</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">05.</span>
+                <span class="section-text">Contact</span>
+                <span class="section-line"></span>
+            </h2>
+            <div class="contact-grid">
+                <div class="contact-content">
+                    <p class="contact-text" lang-block="fr">
+                        Ouvert aux messages. Pour les sujets sensibles — divulgation de vulnérabilité, accès à un dépôt privé —, l'email reste préférable.
+                    </p>
+                    <p class="contact-text" lang-block="en">
+                        Open to messages. For sensitive matters — vulnerability disclosure, private-repo access —, email is preferred.
+                    </p>
+                    <div class="contact-terminal-window">
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="terminal-btn red"></span>
+                                    <span class="terminal-btn yellow"></span>
+                                    <span class="terminal-btn green"></span>
+                                </div>
+                                <span class="terminal-title">contact.sh</span>
+                            </div>
+                            <div class="terminal-body">
+                                <div class="terminal-line">
+                                    <span class="terminal-prompt">$</span>
+                                    <span class="terminal-output">echo $STATUS</span>
+                                </div>
+                                <div class="terminal-line response">
+                                    <span class="terminal-output accent" lang-block="fr">Disponible — stage / PFE 2026</span>
+                                    <span class="terminal-output accent" lang-block="en">Available — internship / capstone 2026</span>
+                                </div>
+                                <div class="terminal-line">
+                                    <span class="terminal-prompt">$</span>
+                                    <span class="terminal-output">cat response_time.txt</span>
+                                </div>
+                                <div class="terminal-line response">
+                                    <span class="terminal-output" lang-block="fr">Sous 24 heures</span>
+                                    <span class="terminal-output" lang-block="en">Within 24 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-links-grid">
+                        <div class="contact-link-item">
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:yassirmoussa754@gmail.com">yassirmoussa754@gmail.com →</a>
+                        </div>
+                        <div class="contact-link-item">
+                            <span class="contact-label">GitHub</span>
+                            <a href="https://github.com/yassirmouyiwa" target="_blank" rel="noopener">github.com/yassirmouyiwa →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Collaboration">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" lang-block="fr">Message</label>
+                            <label for="message" lang-block="en">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span lang-block="fr">Envoyer</span>
+                            <span lang-block="en">Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://github.com/yassirmouyiwa" target="_blank" rel="noopener" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                <p class="footer-text">
+                    <span class="code"><</span>
+                    Designed & Built by Moussa Yassir Mouyiwa
+                    <span class="code"> /></span>
+                </p>
+                <p class="footer-copyright">&copy; <span data-year></span> ENSA Tétouan · GCSE</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#top" class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
