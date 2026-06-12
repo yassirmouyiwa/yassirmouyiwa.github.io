@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="fr"
+      data-theme="dark"
+      data-title-fr="Cisco Routing — Yassir Mouyiwa"
+      data-title-en="Cisco Routing — Yassir Mouyiwa">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+  <title>Cisco Routing — Yassir Mouyiwa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="brand">Yassir Mouyiwa</a>
+    <div class="nav-links">
+      <a href="../index.html#projects">← <span lang-block="fr">Projets</span><span lang-block="en">Projects</span></a>
+      <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer" target="_blank" rel="noopener">Source ↗</a>
+    </div>
+    <div class="nav-controls">
+      <button class="icon-btn" data-lang-toggle aria-label="Switch language">EN</button>
+      <button class="icon-btn" data-theme-toggle aria-label="Switch theme">☼</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <section class="project-hero">
+    <div class="container">
+      <div class="crumb">
+        <a href="../index.html">Accueil</a><span class="sep">/</span><a href="../index.html#projects">Projets</a><span class="sep">/</span>Cisco Routing
+      </div>
+
+      <h1>Cisco Routing — <span class="accent" style="color:var(--accent);font-style:italic;font-weight:500;">4 protocoles comparés</span></h1>
+
+      <p class="lead" lang-block="fr">
+        Quatre travaux pratiques du module <em>Réseaux Avancés</em> à l'ENSA Tétouan, sous Packet Tracer. Même méthodologie sur les quatre : topologie multi-routeurs, plan d'adressage, configuration IOS complète, DHCP, vérification par <code>show ip route</code>, <code>show ip protocols</code>, <code>debug ip rip</code> ou <code>show ip ospf</code> selon le protocole, tests de connectivité end-to-end.
+      </p>
+      <p class="lead" lang-block="en">
+        Four labs from the <em>Advanced Networks</em> module at ENSA Tétouan, on Packet Tracer. Same methodology across all four: multi-router topology, addressing plan, full IOS configuration, DHCP, verification via <code>show ip route</code>, <code>show ip protocols</code>, <code>debug ip rip</code> or <code>show ip ospf</code> depending on the protocol, end-to-end connectivity tests.
+      </p>
+
+      <div class="cta-group" style="margin-top:1.5rem;">
+        <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer" target="_blank" rel="noopener" class="btn btn-primary">
+          <span lang-block="fr">Code complet sur GitHub</span><span lang-block="en">Source on GitHub</span>
+          <span class="arrow">↗</span>
+        </a>
+        <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer/tree/main/reports" target="_blank" rel="noopener" class="btn">
+          <span lang-block="fr">Rapports PDF</span><span lang-block="en">PDF reports</span>
+        </a>
+        <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer/tree/main/topologies" target="_blank" rel="noopener" class="btn">
+          <span lang-block="fr">Fichiers .pkt</span><span lang-block="en">.pkt files</span>
+        </a>
+      </div>
+
+      <div class="spec-card">
+        <div class="item">
+          <span class="label">Repo</span>
+          <span class="value public-tag"><a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer" target="_blank" rel="noopener">cisco-routing-packet-tracer ↗</a></span>
+        </div>
+        <div class="item">
+          <span class="label">Stack</span>
+          <span class="value muted">Cisco IOS · Packet Tracer 8.2+</span>
+        </div>
+        <div class="item">
+          <span class="label" lang-block="fr">Module</span><span class="label" lang-block="en">Module</span>
+          <span class="value muted">Réseaux Avancés</span>
+        </div>
+        <div class="item">
+          <span class="label" lang-block="fr">Année</span><span class="label" lang-block="en">Year</span>
+          <span class="value muted">2025–2026</span>
+        </div>
+        <div class="item">
+          <span class="label">License</span>
+          <span class="value muted">MIT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-body">
+    <div class="container">
+
+      <h2 lang-block="fr">Méthodologie partagée</h2>
+      <h2 lang-block="en">Shared methodology</h2>
+
+      <p lang-block="fr">
+        Chaque TP reprend la même séquence : nommage et sécurisation (<code>hostname</code>, <code>enable secret</code>, <code>service password-encryption</code>, mots de passe console et VTY), configuration des interfaces avec identification manuelle du côté DCE via <code>show controllers Serial X/X</code> et pose du <code>clock rate 64000</code>, puis activation du routage. La vérification finale combine <code>show ip interface brief</code> pour les états <em>up/up</em>, <code>show ip route</code> pour la table installée, et un <code>ping</code> multi-sauts pour valider la convergence.
+      </p>
+      <p lang-block="en">
+        Each lab follows the same sequence: naming and hardening (<code>hostname</code>, <code>enable secret</code>, <code>service password-encryption</code>, console and VTY passwords), interface configuration with manual DCE-side identification via <code>show controllers Serial X/X</code> and <code>clock rate 64000</code>, then routing activation. Final verification combines <code>show ip interface brief</code> for <em>up/up</em> states, <code>show ip route</code> for the installed table, and multi-hop <code>ping</code> to validate convergence.
+      </p>
+
+      <h2>TP 01 — <span lang-block="fr">Routage statique</span><span lang-block="en">Static routing</span></h2>
+
+      <p lang-block="fr">
+        Trois routeurs nommés d'après des villes marocaines — <strong>Tétouan</strong>, <strong>Tanger</strong>, <strong>Rabat</strong> — interconnectés par 2 liaisons WAN série, chacun gérant un LAN local. Objectif : écrire manuellement les routes statiques, puis les remplacer par une route par défaut lorsque la topologie le permet.
+      </p>
+      <p lang-block="en">
+        Three routers named after Moroccan cities — <strong>Tétouan</strong>, <strong>Tanger</strong>, <strong>Rabat</strong> — linked by 2 serial WAN lines, each hosting a local LAN. Goal: write static routes manually, then replace them with a default route where the topology allows it.
+      </p>
+
+<pre class="ascii-diagram">
+  LAN1 192.168.1.0/24          LAN2 192.168.3.0/24          LAN3 172.16.2.0/24
+        │                            │                            │
+      [Tetouan]──────S2/0──────[Tanger]──────S3/0──────[Rabat]
+                192.168.2.0/30          172.16.1.0/30
+</pre>
+
+      <p style="font-size:0.88rem;color:var(--fg-muted);">
+        ↗ <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer/blob/main/reports/TP1_routage_statique.pdf" target="_blank" rel="noopener">TP1_routage_statique.pdf</a> ·
+        <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer/blob/main/topologies/TP1_routage_statique.pkt" target="_blank" rel="noopener">TP1_routage_statique.pkt</a> ·
+        <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer/blob/main/topologies/TP1_live_simulation.mp4" target="_blank" rel="noopener">simulation.mp4</a>
+      </p>
+
+      <h3 lang-block="fr">Exemple — route statique sur Tétouan</h3>
+      <h3 lang-block="en">Example — static route on Tétouan</h3>
+
+<pre><code>Tetouan(config)# ip route 192.168.3.0 255.255.255.0 192.168.2.2
+Tetouan(config)# ip route 172.16.1.0 255.255.255.252 192.168.2.2
+Tetouan(config)# ip route 172.16.2.0 255.255.255.0 192.168.2.2
+
+! une fois les 3 routes installées, on simplifie :
+Tetouan(config)# no ip route 192.168.3.0 255.255.255.0 192.168.2.2
+Tetouan(config)# no ip route 172.16.1.0 255.255.255.252 192.168.2.2
+Tetouan(config)# no ip route 172.16.2.0 255.255.255.0 192.168.2.2
+Tetouan(config)# ip route 0.0.0.0 0.0.0.0 192.168.2.2</code></pre>
+
+      <h2>TP 02 — RIPv1</h2>
+
+      <p lang-block="fr">
+        Trois routeurs R1, R2, R3 interconnectés en chaîne via des liaisons série, chacun avec un LAN en FastEthernet. R3 joue en plus le rôle de <strong>serveur DHCP</strong> pour le réseau <code>172.31.31.0/24</code>. Activation de RIPv1 sur les trois, puis optimisation via <code>passive-interface</code> et personnalisation des timers.
+      </p>
+      <p lang-block="en">
+        Three routers R1, R2, R3 chained via serial links, each with a FastEthernet LAN. R3 also acts as <strong>DHCP server</strong> for the <code>172.31.31.0/24</code> network. RIPv1 enabled on all three, then tuned via <code>passive-interface</code> and custom timers.
+      </p>
+
+<pre class="ascii-diagram">
+  LAN 10.0.0.0/8              192.168.15.0/24             DHCP 172.31.31.0/24
+  PC1 ── R1 ──S2/0─── R2 ──S3/0─── R3 ── PC3 (dhcp)
+              192.168.13.0/24   192.168.14.0/24      pool: LAN-R3
+                                                       lease 7 jours
+</pre>
+
+      <p style="font-size:0.88rem;color:var(--fg-muted);">
+        ↗ <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer/blob/main/reports/TP2_RIPv1.pdf" target="_blank" rel="noopener">TP2_RIPv1.pdf</a> ·
+        <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer/blob/main/topologies/TP2_RIPv1.pkt" target="_blank" rel="noopener">TP2_RIPv1.pkt</a>
+      </p>
+
+      <h3>R2 — RIPv1</h3>
+
+<pre><code>R2(config)# router rip
+R2(config-router)#  version 1
+R2(config-router)#  network 192.168.13.0
+R2(config-router)#  network 192.168.14.0
+R2(config-router)#  network 192.168.15.0
+R2(config-router)#  no auto-summary
+R2(config-router)#  passive-interface FastEthernet0/0
+R2(config-router)#  timers basic 5 15 15 30   ! convergence accélérée (lab)</code></pre>
+
+      <div class="callout warn">
+        <span class="label" lang-block="fr">Piège observé</span>
+        <span class="label" lang-block="en">Observed pitfall</span>
+        <p lang-block="fr">
+          Les timers <code>timers basic 5 15 15 30</code> accélèrent la convergence en lab mais <strong>doivent être identiques sur tous les routeurs du domaine RIP</strong>. Des valeurs divergentes produisent des boucles et des routes instables. En production, on laisse les valeurs par défaut (30 / 180 / 180 / 240).
+        </p>
+        <p lang-block="en">
+          Custom timers speed up convergence in the lab but <strong>must be identical on every router in the RIP domain</strong>. Mismatched values cause loops and unstable routes. Keep defaults (30 / 180 / 180 / 240) in production.
+        </p>
+      </div>
+
+      <h2>TP 03 — RIPv2 + VLSM</h2>
+
+      <p lang-block="fr">
+        Trois routeurs, 3 <strong>interfaces Loopback</strong> sur R3 (Lo0, Lo1, Lo2) simulant des sous-réseaux distants, adressage <strong>VLSM</strong> mixant /24, /28 et /30, route de résumé <code>192.168.0.0/16</code> pointant vers <code>Null0</code> sur R2 pour éviter les boucles, et <strong>redistribution</strong> de cette statique dans RIPv2.
+      </p>
+      <p lang-block="en">
+        Three routers, 3 <strong>Loopback interfaces</strong> on R3 (Lo0, Lo1, Lo2) simulating remote subnets, <strong>VLSM</strong> addressing mixing /24, /28 and /30, a summary static route <code>192.168.0.0/16</code> pointing to <code>Null0</code> on R2 to prevent loops, and <strong>redistribution</strong> of that static into RIPv2.
+      </p>
+
+      <p style="font-size:0.88rem;color:var(--fg-muted);">
+        ↗ <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer/blob/main/reports/TP3_RIPv2.pdf" target="_blank" rel="noopener">TP3_RIPv2.pdf</a> ·
+        <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer/blob/main/topologies/TP3_RIPv2.pkt" target="_blank" rel="noopener">TP3_RIPv2.pkt</a>
+      </p>
+
+<pre><code>! --- R2 : route de résumé + redistribution ---
+R2(config)# ip route 192.168.0.0 255.255.0.0 Null0
+R2(config)# router rip
+R2(config-router)#  version 2
+R2(config-router)#  network 10.0.0.0
+R2(config-router)#  network 209.165.200.0
+R2(config-router)#  redistribute static
+R2(config-router)#  no auto-summary
+
+! --- R3 : loopbacks pour simuler des sites distants ---
+R3(config)# interface Loopback0
+R3(config-if)#  ip address 172.30.200.33 255.255.255.240     ! /28
+R3(config)# interface Loopback1
+R3(config-if)#  ip address 172.30.200.17 255.255.255.240     ! /28
+R3(config)# interface Loopback2
+R3(config-if)#  ip address 172.30.110.1  255.255.255.0       ! /24</code></pre>
+
+      <div class="callout info">
+        <span class="label" lang-block="fr">Pourquoi Null0 ?</span>
+        <span class="label" lang-block="en">Why Null0?</span>
+        <p lang-block="fr">
+          <code>Null0</code> est une interface poubelle : tout paquet destiné à un sous-réseau non existant de <code>192.168.0.0/16</code> est détruit au lieu d'être renvoyé. C'est ce qui permet à R2 d'<strong>annoncer le super-réseau /16 via RIPv2</strong> sans créer de boucle sur des destinations inexistantes.
+        </p>
+        <p lang-block="en">
+          <code>Null0</code> is a sink interface: any packet destined to a non-existent subnet of <code>192.168.0.0/16</code> gets dropped rather than looped back. This lets R2 <strong>advertise the /16 super-network via RIPv2</strong> without creating loops for non-existent destinations.
+        </p>
+      </div>
+
+      <h3 lang-block="fr">Observation clé via <code>debug ip rip</code></h3>
+      <h3 lang-block="en">Key observation via <code>debug ip rip</code></h3>
+
+      <p lang-block="fr">
+        Les updates RIPv2 sont envoyées en <strong>multicast 224.0.0.9</strong> (vs broadcast <code>255.255.255.255</code> en RIPv1), et surtout les masques réels <code>/30</code>, <code>/28</code>, <code>/24</code> apparaissent dans les updates. Sans <code>no auto-summary</code>, ils seraient résumés à <code>/16</code> aux frontières de classe — comportement inacceptable avec un adressage VLSM.
+      </p>
+      <p lang-block="en">
+        RIPv2 updates are sent as <strong>multicast 224.0.0.9</strong> (vs RIPv1 broadcast <code>255.255.255.255</code>), and crucially the actual masks <code>/30</code>, <code>/28</code>, <code>/24</code> are visible in the updates. Without <code>no auto-summary</code>, they would collapse to <code>/16</code> at class boundaries — unusable under VLSM.
+      </p>
+
+      <h2>TP 04 — OSPFv2 <span lang-block="fr">mono-zone</span><span lang-block="en">single-area</span></h2>
+
+      <p lang-block="fr">
+        Trois routeurs Cisco 1841 dans la même <strong>area 0</strong>, R2 au centre relié à R1 au nord et R3 à l'ouest, plus 2 LANs locaux sur R2. DHCP sur les 3 routeurs (4 pools au total), et analyse approfondie : <strong>élection du Router-ID</strong>, comparaison avant / après l'ajout de loopbacks, lecture de la <strong>LSDB</strong> via <code>show ip ospf database</code>.
+      </p>
+      <p lang-block="en">
+        Three Cisco 1841 routers in the same <strong>area 0</strong>, R2 at the center connected to R1 northbound and R3 westbound, plus 2 local LANs on R2. DHCP on all 3 routers (4 pools total), and deep analysis: <strong>Router-ID election</strong>, before/after loopback comparison, LSDB reading via <code>show ip ospf database</code>.
+      </p>
+
+      <p style="font-size:0.88rem;color:var(--fg-muted);">
+        ↗ <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer/blob/main/reports/TP4_OSPF.pdf" target="_blank" rel="noopener">TP4_OSPF.pdf</a> ·
+        <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer/blob/main/topologies/TP4_OSPF.pkt" target="_blank" rel="noopener">TP4_OSPF.pkt</a>
+      </p>
+
+      <h3>OSPF — <span lang-block="fr">activation</span><span lang-block="en">activation</span></h3>
+
+<pre><code>! --- R2 : 4 réseaux dans area 0 ---
+R2(config)# router ospf 1
+R2(config-router)#  network 100.10.0.0   0.0.255.255 area 0
+R2(config-router)#  network 101.10.0.0   0.0.255.255 area 0
+R2(config-router)#  network 192.168.1.32  0.0.0.31   area 0   ! /27 wildcard
+R2(config-router)#  network 192.168.1.128 0.0.0.31   area 0</code></pre>
+
+      <div class="callout warn">
+        <span class="label">Wildcard mask</span>
+        <p lang-block="fr">
+          OSPF consomme un <em>wildcard mask</em>, inverse du masque réseau. Pour un <code>/27</code>, c'est <code>0.0.0.31</code> ; pour un <code>/16</code>, c'est <code>0.0.255.255</code>. Source d'erreur la plus classique en TP : mettre un subnet mask à la place — l'adjacence ne passe alors jamais en <em>FULL</em> et on perd 20 minutes à chercher.
+        </p>
+        <p lang-block="en">
+          OSPF uses <em>wildcard masks</em>, the inverse of subnet masks. For <code>/27</code> → <code>0.0.0.31</code>; for <code>/16</code> → <code>0.0.255.255</code>. Classic mistake: passing a subnet mask by accident — adjacency never reaches <em>FULL</em> and 20 minutes get burned looking for it.
+        </p>
+      </div>
+
+      <h3>Router-ID — <span lang-block="fr">stabilisation via Loopback</span><span lang-block="en">loopback-pinned</span></h3>
+
+      <p lang-block="fr">
+        Par défaut, OSPF choisit le Router-ID en prenant la plus haute IP d'interface physique active. Résultat : on obtient des RIDs non déterministes qui changent si une interface tombe. Solution standard en production — poser une <strong>interface Loopback</strong> sur chaque routeur, prioritaire dans l'algorithme d'élection.
+      </p>
+      <p lang-block="en">
+        By default, OSPF picks the Router-ID from the highest active physical IP. Result: non-deterministic RIDs that shift when an interface goes down. Production-standard fix — add a <strong>Loopback interface</strong> on each router, which takes priority in the election algorithm.
+      </p>
+
+<pre><code>R1(config)# interface Loopback0
+R1(config-if)#  ip address 172.16.1.1 255.255.255.0
+
+R2(config)# interface Loopback0
+R2(config-if)#  ip address 172.16.2.1 255.255.255.0
+
+R3(config)# interface Loopback0
+R3(config-if)#  ip address 172.16.3.1 255.255.255.0
+
+R1# clear ip ospf process        ! force la relance pour appliquer le nouveau RID
+Reset ALL OSPF processes? [no]: yes</code></pre>
+
+      <p lang-block="fr">
+        Après <code>clear ip ospf process</code>, <code>show ip ospf</code> confirme les nouveaux RIDs : <code>172.16.1.1</code> / <code>172.16.2.1</code> / <code>172.16.3.1</code>. Avantage réel : une interface loopback est logique, elle ne tombe jamais — le RID reste stable même en cas de panne d'interface physique.
+      </p>
+      <p lang-block="en">
+        After <code>clear ip ospf process</code>, <code>show ip ospf</code> confirms the new RIDs: <code>172.16.1.1</code> / <code>172.16.2.1</code> / <code>172.16.3.1</code>. Real benefit: a loopback is logical and never goes down — the RID stays stable even under physical interface failure.
+      </p>
+
+      <h2 lang-block="fr">Synthèse — les 4 protocoles comparés</h2>
+      <h2 lang-block="en">Summary — 4 protocols compared</h2>
+
+      <div class="compare-table-wrapper">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th lang-block="fr">Statique</th><th lang-block="en">Static</th>
+              <th>RIPv1</th>
+              <th>RIPv2</th>
+              <th>OSPFv2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th lang-block="fr">Type</th><th lang-block="en">Type</th>
+              <td lang-block="fr">Manuel</td><td lang-block="en">Manual</td>
+              <td>Distance-vector</td>
+              <td>Distance-vector</td>
+              <td>Link-state</td>
+            </tr>
+            <tr>
+              <th>VLSM</th>
+              <td>✓</td>
+              <td>✗</td>
+              <td>✓ <span class="mono">(no auto-summary)</span></td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <th lang-block="fr">Diffusion</th><th lang-block="en">Delivery</th>
+              <td>—</td>
+              <td>broadcast 255.255.255.255</td>
+              <td>multicast 224.0.0.9</td>
+              <td>multicast 224.0.0.5 / .6</td>
+            </tr>
+            <tr>
+              <th lang-block="fr">Distance admin.</th><th lang-block="en">Admin distance</th>
+              <td>1</td>
+              <td>120</td>
+              <td>120</td>
+              <td>110</td>
+            </tr>
+            <tr>
+              <th lang-block="fr">Métrique</th><th lang-block="en">Metric</th>
+              <td>—</td>
+              <td lang-block="fr">Sauts (max 15)</td><td lang-block="en">Hops (max 15)</td>
+              <td lang-block="fr">Sauts (max 15)</td><td lang-block="en">Hops (max 15)</td>
+              <td>10⁸ / BW</td>
+            </tr>
+            <tr>
+              <th lang-block="fr">Convergence</th><th lang-block="en">Convergence</th>
+              <td lang-block="fr">Immédiate</td><td lang-block="en">Instant</td>
+              <td>30 – 240 s</td>
+              <td>30 – 240 s</td>
+              <td lang-block="fr">Secondes (LSA)</td><td lang-block="en">Seconds (LSA)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 lang-block="fr">Ce que j'en retire</h2>
+      <h2 lang-block="en">Takeaways</h2>
+
+      <ul lang-block="fr">
+        <li>Toujours désactiver <code>auto-summary</code> sur RIPv2 — sinon VLSM cassé silencieusement.</li>
+        <li>Toujours fixer le Router-ID OSPF explicitement (Loopback ou <code>router-id X.X.X.X</code>) — les RIDs implicites bougent.</li>
+        <li>Toujours poser <code>passive-interface</code> sur les interfaces LAN — pas de voisin routeur dessus, inutile d'y envoyer des updates et d'ouvrir une surface d'attaque.</li>
+        <li>Premier paquet parfois perdu après convergence : c'est de l'<strong>ARP</strong>, pas un bug du protocole de routage.</li>
+      </ul>
+      <ul lang-block="en">
+        <li>Always disable <code>auto-summary</code> on RIPv2 — VLSM silently breaks otherwise.</li>
+        <li>Always pin the OSPF Router-ID explicitly (Loopback or <code>router-id X.X.X.X</code>) — implicit RIDs drift.</li>
+        <li>Always set <code>passive-interface</code> on LAN-facing interfaces — no router neighbor there, so sending updates is wasteful and opens attack surface.</li>
+        <li>First packet sometimes lost after convergence: that's <strong>ARP</strong>, not a routing-protocol bug.</li>
+      </ul>
+
+      <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border-soft);">
+        <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer" target="_blank" rel="noopener" class="btn btn-primary">
+          <span lang-block="fr">Voir le code complet</span><span lang-block="en">See full source</span>
+          <span class="arrow">↗</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span>© <span data-year></span> Moussa Yassir Mouyiwa</span>
+    <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer" target="_blank" rel="noopener">cisco-routing-packet-tracer</a>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

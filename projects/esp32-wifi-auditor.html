@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="fr"
+      data-theme="dark"
+      data-title-fr="ESP32 Wi-Fi Auditor — Yassir Mouyiwa"
+      data-title-en="ESP32 Wi-Fi Auditor — Yassir Mouyiwa">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+  <title>ESP32 Wi-Fi Auditor — Yassir Mouyiwa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="brand">Yassir Mouyiwa</a>
+    <div class="nav-links">
+      <a href="../index.html#projects">← <span lang-block="fr">Projets</span><span lang-block="en">Projects</span></a>
+      <a href="https://github.com/yassirmouyiwa" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="nav-controls">
+      <button class="icon-btn" data-lang-toggle aria-label="Switch language">EN</button>
+      <button class="icon-btn" data-theme-toggle aria-label="Switch theme">☼</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <section class="project-hero">
+    <div class="container">
+      <div class="crumb">
+        <a href="../index.html">Accueil</a><span class="sep">/</span><a href="../index.html#projects">Projets</a><span class="sep">/</span>ESP32 Wi-Fi Auditor
+      </div>
+
+      <h1>ESP32 Wi-Fi Auditor — <span style="color:var(--accent);font-style:italic;font-weight:500;">plateforme d'audit pédagogique</span></h1>
+
+      <p class="lead" lang-block="fr">
+        Plateforme full-stack pour étudier de bout en bout le fonctionnement des protocoles 802.11 et les attaques classiques sur WPA2-Personal. Un <strong>dashboard Next.js</strong> tourne en local sur la machine de l'opérateur, un <strong>firmware ESP32-S3</strong> en réseau s'enregistre auprès du dashboard et reçoit ses commandes par polling. Le firmware capture en mode promiscuous, génère des fichiers <code>.pcap</code> Wireshark-clean, exécute des deauth ciblées, lance un evil-twin avec captive portal, et vérifie de manière asynchrone les mots de passe contre le vrai réseau.
+      </p>
+      <p class="lead" lang-block="en">
+        Full-stack platform to study end-to-end how 802.11 protocols work and how classic attacks on WPA2-Personal play out. A <strong>Next.js dashboard</strong> runs locally on the operator's machine; an <strong>ESP32-S3 firmware</strong> on the network registers with the dashboard and polls for commands. The firmware captures in promiscuous mode, generates Wireshark-clean <code>.pcap</code> files, runs targeted deauth, starts an evil-twin with captive portal, and asynchronously verifies passwords against the real network.
+      </p>
+
+      <div class="cta-group" style="margin-top:1.5rem;">
+        <a href="mailto:yassirmoussa754@gmail.com?subject=Acc%C3%A8s%20demand%C3%A9%20%E2%80%94%20esp32-wifi-auditor&body=Bonjour%20Yassir%2C%0A%0AJe%20demande%20l%27acc%C3%A8s%20au%20d%C3%A9p%C3%B4t%20priv%C3%A9%20esp32-wifi-auditor.%0A%0AContexte%20%3A%0A-%20Qui%20je%20suis%20%3A%20%0A-%20Pourquoi%20l%27acc%C3%A8s%20%3A%20%0A-%20Mon%20handle%20GitHub%20%3A%20%0A%0AMerci."
+           class="btn btn-primary">
+          <span lang-block="fr">Demander l'accès au code</span>
+          <span lang-block="en">Request source access</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="mailto:yassirmoussa754@gmail.com" class="btn">
+          <span lang-block="fr">Contact direct</span><span lang-block="en">Direct contact</span>
+        </a>
+      </div>
+
+      <div class="spec-card">
+        <div class="item">
+          <span class="label">Repo</span>
+          <span class="value private-tag">⏿ esp32-wifi-auditor</span>
+        </div>
+        <div class="item">
+          <span class="label" lang-block="fr">Accès</span><span class="label" lang-block="en">Access</span>
+          <span class="value private-tag" lang-block="fr">Privé · sur demande</span>
+          <span class="value private-tag" lang-block="en">Private · on request</span>
+        </div>
+        <div class="item">
+          <span class="label">Hardware</span>
+          <span class="value muted">ESP32-S3 N16R8</span>
+        </div>
+        <div class="item">
+          <span class="label">Stack</span>
+          <span class="value muted">Next.js 16 · Prisma 6 · SQLite</span>
+        </div>
+        <div class="item">
+          <span class="label">Version</span>
+          <span class="value muted">v2.6</span>
+        </div>
+        <div class="item">
+          <span class="label">License</span>
+          <span class="value muted">AGPL-3.0</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-body">
+    <div class="container">
+
+      <div class="callout danger">
+        <span class="label" lang-block="fr">Cadre légal — à lire avant tout</span>
+        <span class="label" lang-block="en">Legal scope — read first</span>
+        <p lang-block="fr">
+          Ce projet manipule des trames 802.11 de management (deauth, beacons cloned), capture du trafic en mode promiscuous, et tente la connexion à des réseaux Wi-Fi avec des mots de passe saisis. Tout cela n'est légal que <strong>contre votre propre infrastructure</strong> ou avec une <strong>autorisation écrite explicite</strong> du propriétaire. Au Maroc, la loi <strong>n° 07-03</strong> (articles 607-3 à 607-10 du Code pénal) pénalise non seulement l'accès frauduleux à un STAD mais aussi la <strong>mise à disposition</strong> d'outils conçus pour le commettre — c'est la raison principale du choix de garder ce dépôt en accès privé.
+        </p>
+        <p lang-block="en">
+          This project manipulates 802.11 management frames (deauth, cloned beacons), captures traffic in promiscuous mode, and attempts connection to Wi-Fi networks using submitted passwords. None of this is legal except against your own infrastructure or with explicit written authorization from the owner. In Morocco, law <strong>07-03</strong> (articles 607-3 to 607-10 of the Criminal Code) criminalizes not only fraudulent access to a system but also <strong>making tools available</strong> for it — the main reason this repository is kept private.
+        </p>
+      </div>
+
+      <h2 lang-block="fr">Architecture</h2>
+      <h2 lang-block="en">Architecture</h2>
+
+      <p lang-block="fr">
+        Deux composants distincts sur le même réseau local. Le firmware sur l'ESP32 ne fait pas de logique métier : il exécute des commandes envoyées par le dashboard. Le dashboard ne fait pas d'opérations 802.11 : il pilote, stocke, présente. La séparation rend chaque composant testable indépendamment et l'API REST sert d'interface contractuelle.
+      </p>
+      <p lang-block="en">
+        Two distinct components on the same LAN. The firmware on the ESP32 holds no business logic: it executes commands issued by the dashboard. The dashboard performs no 802.11 operations: it drives, stores, presents. The separation makes each side independently testable, with the REST API as the contract.
+      </p>
+
+<pre class="ascii-diagram">
+        ┌──────────────────────────────────┐                   ┌────────────────────────┐
+        │   Operator Machine               │                   │   ESP32-S3 N16R8       │
+        │   (Linux / macOS / Windows)      │                   │   (16 MB flash · 8 PSR)│
+        │                                  │                   │                        │
+        │   Next.js 16 dashboard           │   ◀── HTTP poll ──│   Firmware Arduino     │
+        │   :3000  bound on 0.0.0.0        │                   │   STA mode             │
+        │                                  │                   │                        │
+        │   ┌─ Prisma ORM ────────────┐    │   ── HTTP push ──▶│   Capture / Attack /   │
+        │   │  SQLite db/custom.db    │    │  (heartbeat,      │   Verification         │
+        │   │  9 models               │    │   passwords,      │                        │
+        │   │  14 REST endpoints      │    │   captures)       │   ──── 802.11 air ───▸ Target Wi-Fi
+        │   └─────────────────────────┘    │                   │                        │
+        │                                  │                   │                        │
+        │   8 dashboard panels             │                   │                        │
+        │   shadcn/ui + Tailwind 4         │                   │                        │
+        └──────────────────────────────────┘                   └────────────────────────┘
+</pre>
+
+      <h2 lang-block="fr">Stack technique</h2>
+      <h2 lang-block="en">Technical stack</h2>
+
+      <h3 lang-block="fr">Côté dashboard</h3>
+      <h3 lang-block="en">Dashboard side</h3>
+
+      <ul lang-block="fr">
+        <li><strong>Next.js 16</strong> avec App Router et React 19 (Server Components pour les pages, Client Components pour les panels interactifs).</li>
+        <li><strong>Prisma 6</strong> pinné en <code>~6.11.1</code> pour éviter le breaking change de la v7. SQLite local, base régénérée à la volée par <code>prisma db push</code>.</li>
+        <li><strong>shadcn/ui slim</strong> — 14 composants conservés sur les ~50 du package complet, le reste supprimé manuellement pour réduire le bundle.</li>
+        <li><strong>Tailwind 4</strong> avec <code>@tailwindcss/postcss</code>, plus <code>tw-animate-css</code> et <code>framer-motion</code> pour les transitions de panels.</li>
+        <li><strong>21 dépendances actives</strong> seulement (le projet a démarré avec 70+ ; nettoyage en v2.6 : suppression de <code>next-auth</code>, <code>next-intl</code>, <code>zustand</code>, <code>mdxeditor</code>, <code>dnd-kit</code>, <code>react-hook-form</code>).</li>
+      </ul>
+      <ul lang-block="en">
+        <li><strong>Next.js 16</strong> with App Router and React 19 (Server Components for pages, Client Components for interactive panels).</li>
+        <li><strong>Prisma 6</strong> pinned to <code>~6.11.1</code> to avoid the v7 breaking change. Local SQLite, schema regenerated on the fly via <code>prisma db push</code>.</li>
+        <li><strong>shadcn/ui slim</strong> — 14 components kept out of ~50, the rest manually deleted to keep the bundle tight.</li>
+        <li><strong>Tailwind 4</strong> with <code>@tailwindcss/postcss</code>, plus <code>tw-animate-css</code> and <code>framer-motion</code> for panel transitions.</li>
+        <li>Only <strong>21 active dependencies</strong> (project started with 70+; v2.6 cleanup: dropped <code>next-auth</code>, <code>next-intl</code>, <code>zustand</code>, <code>mdxeditor</code>, <code>dnd-kit</code>, <code>react-hook-form</code>).</li>
+      </ul>
+
+      <h3 lang-block="fr">Côté firmware</h3>
+      <h3 lang-block="en">Firmware side</h3>
+
+      <ul lang-block="fr">
+        <li><strong>ESP32-S3 N16R8</strong> (16 MB flash, 8 MB PSRAM OPI, 240 MHz), Arduino-ESP32 ≥ 3.x basé sur IDF 5.x.</li>
+        <li>6 fichiers source : <code>esp32_wifi_auditor.ino</code> (main loop + state machine), <code>packet_capture.h</code>, <code>captive_portal.h</code>, <code>api_client.h</code>, <code>wifi_scanner.h</code>, <code>password_verifier.h</code>.</li>
+        <li>Architecture événementielle non bloquante : pas de <code>delay()</code> long, tout passe par la state machine pour rester réactif aux commandes du dashboard.</li>
+      </ul>
+      <ul lang-block="en">
+        <li><strong>ESP32-S3 N16R8</strong> (16 MB flash, 8 MB OPI PSRAM, 240 MHz), Arduino-ESP32 ≥ 3.x based on IDF 5.x.</li>
+        <li>6 source files: <code>esp32_wifi_auditor.ino</code> (main loop + state machine), <code>packet_capture.h</code>, <code>captive_portal.h</code>, <code>api_client.h</code>, <code>wifi_scanner.h</code>, <code>password_verifier.h</code>.</li>
+        <li>Event-driven non-blocking architecture: no long <code>delay()</code> calls, everything funnels through the state machine to stay responsive to dashboard commands.</li>
+      </ul>
+
+      <h2 lang-block="fr">Modèle de données</h2>
+      <h2 lang-block="en">Data model</h2>
+
+      <p lang-block="fr">
+        9 modèles Prisma forment le cœur du système. Les relations sont volontairement simples — chaque entité référence le réseau cible (<code>Network</code>) via <code>networkId</code>, ce qui permet de filtrer rapidement toutes les opérations associées à un SSID donné.
+      </p>
+      <p lang-block="en">
+        9 Prisma models form the heart of the system. Relations are deliberately simple — each entity references the target network (<code>Network</code>) via <code>networkId</code>, allowing fast filtering of all operations tied to a given SSID.
+      </p>
+
+<pre><code>model Network {
+  id         String   @id @default(cuid())
+  ssid       String
+  bssid      String
+  channel    Int
+  rssi       Int
+  encryption String
+  isTarget   Boolean  @default(false)
+  // relations
+  captures   Capture[]
+  passwords  Password[]
+  attacks    AttackSession[]
+}
+
+model AttackSession {
+  id                String  @id @default(cuid())
+  type              String   // evil_twin | deauth | captive_portal
+  status            String   // idle | running | success | stopped | error
+  targetSsid        String
+  targetBssid       String
+  channel           Int
+  clientsDeauthed   Int     @default(0)
+  passwordsCaptured Int     @default(0)
+  startedAt         DateTime?
+  stoppedAt         DateTime?
+  // ...
+}</code></pre>
+
+      <p lang-block="fr">
+        Les autres modèles (<code>Capture</code>, <code>Password</code>, <code>ActivityLog</code>, <code>Esp32Device</code>, <code>Esp32Command</code>) suivent la même logique. Une seule cible peut être marquée <code>isTarget=true</code> à la fois — cette atomicité est gérée côté API.
+      </p>
+      <p lang-block="en">
+        The other models (<code>Capture</code>, <code>Password</code>, <code>ActivityLog</code>, <code>Esp32Device</code>, <code>Esp32Command</code>) follow the same pattern. Only one network may carry <code>isTarget=true</code> at a time — this atomicity is enforced API-side.
+      </p>
+
+      <h2 lang-block="fr">Points techniques saillants</h2>
+      <h2 lang-block="en">Technical highlights</h2>
+
+      <h3 lang-block="fr">Génération PCAP — vraie radiotap, Wireshark-clean</h3>
+      <h3 lang-block="en">PCAP generation — proper radiotap, Wireshark-clean</h3>
+
+      <p lang-block="fr">
+        L'endpoint <code>/api/captures/[id]/download</code> ne se contente pas de dumper les octets bruts capturés. Il assemble un <strong>fichier PCAP avec linktype 127 (radiotap)</strong>, en-têtes 802.11 valides, et IEs (SSID, supported rates, channel) reconstruits depuis les métadonnées de la BDD. Wireshark décode proprement les beacons, les QoS Data, les management frames — pas de "Malformed" en colonne Info.
+      </p>
+      <p lang-block="en">
+        The <code>/api/captures/[id]/download</code> endpoint doesn't just dump raw captured bytes. It assembles a <strong>PCAP file with linktype 127 (radiotap)</strong>, valid 802.11 headers, and IEs (SSID, supported rates, channel) reconstructed from DB metadata. Wireshark cleanly decodes beacons, QoS Data, management frames — no "Malformed" in the Info column.
+      </p>
+
+      <div class="callout info">
+        <span class="label" lang-block="fr">Pourquoi c'est important</span>
+        <span class="label" lang-block="en">Why it matters</span>
+        <p lang-block="fr">
+          Beaucoup de tools open-source captent le trafic 802.11 mais le sérialisent en PCAP brut sans radiotap, ce qui force l'analyste à passer par <code>tshark -i &lt;virt&gt;</code> ou à reconstruire les en-têtes à la main. Servir un PCAP déjà valide change le workflow d'analyse — on charge dans Wireshark et on travaille immédiatement.
+        </p>
+        <p lang-block="en">
+          Many open-source tools capture 802.11 traffic but serialize it as raw PCAP without radiotap, forcing the analyst to use <code>tshark -i &lt;virt&gt;</code> or rebuild headers by hand. Serving a pre-valid PCAP changes the analysis workflow — load into Wireshark and work immediately.
+        </p>
+      </div>
+
+      <h3 lang-block="fr">Deauth ciblé en burst</h3>
+      <h3 lang-block="en">Targeted burst deauth</h3>
+
+      <p lang-block="fr">
+        Une seule trame deauth broadcast est ignorée par les clients modernes (Android 11+, iOS 14+, Windows 11). La v2.6 envoie un <strong>burst de 8 trames × 2 directions</strong> (AP→client + client→AP), et si le MAC du client est connu, la deauth est <strong>unicast</strong> au lieu de broadcast — l'efficacité monte d'un ordre de grandeur.
+      </p>
+      <p lang-block="en">
+        A single broadcast deauth gets ignored by modern clients (Android 11+, iOS 14+, Windows 11). v2.6 fires a <strong>burst of 8 frames × 2 directions</strong> (AP→client + client→AP), and if the client MAC is known, deauth is <strong>unicast</strong> instead of broadcast — effectiveness goes up an order of magnitude.
+      </p>
+
+<pre><code>// burst: 8 frames each direction, with proper sequence numbering
+for (int i = 0; i &lt; 8; i++) {
+  send_deauth(target.bssid, client_mac, REASON_CLASS3_NONAUTH);     // AP -> client
+  send_deauth(client_mac, target.bssid, REASON_CLASS3_NONAUTH);     // client -> AP
+  delayMicroseconds(800);
+}</code></pre>
+
+      <p lang-block="fr">
+        L'envoi se fait via <code>esp_wifi_internal_tx()</code>, qui contourne le filtre des trames de management introduit dans IDF 5.x sur l'API publique <code>esp_wifi_80211_tx()</code>. La fonction <code>ieee80211_raw_frame_sanity_check()</code>, qu'on pouvait surcharger en weak symbol dans les anciennes versions, ne l'est plus.
+      </p>
+      <p lang-block="en">
+        The send goes through <code>esp_wifi_internal_tx()</code>, bypassing the management-frame filter introduced in IDF 5.x on the public <code>esp_wifi_80211_tx()</code> API. The <code>ieee80211_raw_frame_sanity_check()</code> function, previously a weak symbol that could be overridden, no longer is.
+      </p>
+
+      <h3 lang-block="fr">Vérification de mot de passe asynchrone</h3>
+      <h3 lang-block="en">Async password verification</h3>
+
+      <p lang-block="fr">
+        Quand une victime soumet un mot de passe via le portail captif, l'ESP32 doit basculer en mode STA, tenter <code>WiFi.begin(target.ssid, pwd, target.ch, target.bssid)</code>, attendre jusqu'à 10 s, et reprendre son rôle d'AP. En v2.5 cette opération bloquait la main loop — pendant 10 s les heartbeats vers le dashboard étaient interrompus, le device passait en <em>offline</em>. La v2.6 passe par la state machine : la vérification s'exécute en arrière-plan, les heartbeats continuent, et le dashboard voit l'état <code>verifying</code> passer à <code>success</code> ou <code>failed</code> sans interruption.
+      </p>
+      <p lang-block="en">
+        When a victim submits a password through the captive portal, the ESP32 has to switch to STA mode, attempt <code>WiFi.begin(target.ssid, pwd, target.ch, target.bssid)</code>, wait up to 10 s, and resume its AP role. In v2.5 this operation blocked the main loop — for 10 s heartbeats to the dashboard stalled, the device went <em>offline</em>. v2.6 routes it through the state machine: verification runs in the background, heartbeats keep flowing, and the dashboard sees <code>verifying</code> transition to <code>success</code> or <code>failed</code> with no interruption.
+      </p>
+
+      <h3 lang-block="fr">Single source of truth pour les commandes</h3>
+      <h3 lang-block="en">Single source of truth for commands</h3>
+
+      <p lang-block="fr">
+        L'ESP32 récupère les commandes uniquement via <code>/api/esp32/commands</code> (status <code>pending</code> retournés et marqués <code>sent</code> atomiquement). L'endpoint <code>/api/esp32/heartbeat</code> ne renvoie plus la liste de commandes — il s'occupe seulement de signaler que le device est vivant. Ce séparation a éliminé un bug subtil de v2.5 où la même commande pouvait être exécutée deux fois si elle apparaissait à la fois dans la réponse heartbeat et dans le poll suivant.
+      </p>
+      <p lang-block="en">
+        The ESP32 fetches commands only through <code>/api/esp32/commands</code> (rows in <code>pending</code> are returned and marked <code>sent</code> atomically). The <code>/api/esp32/heartbeat</code> endpoint no longer returns the command list — it just signals the device is alive. This separation killed a subtle v2.5 bug where the same command could fire twice if it appeared both in the heartbeat response and in the next poll.
+      </p>
+
+      <h2 lang-block="fr">Workflow type</h2>
+      <h2 lang-block="en">Typical workflow</h2>
+
+      <ol lang-block="fr">
+        <li><strong>Boot</strong> — ESP32 démarre, se connecte au Wi-Fi de management, envoie son premier heartbeat. Le dashboard l'affiche en <em>Online</em>.</li>
+        <li><strong>Scan</strong> — bouton <em>Scan Networks</em> ou commande <code>scan</code> dans le Serial. La liste des SSIDs apparaît dans le panel <em>Networks</em>.</li>
+        <li><strong>Capture</strong> — sélection d'un canal dans <em>Captures → New Capture</em>, l'ESP32 passe en mode promiscuous, capture pendant la durée choisie. Stop, puis <em>Download</em> donne un <code>.pcap</code> directement ouvrable dans Wireshark.</li>
+        <li><strong>Evil Twin</strong> (sur son propre réseau de test) — onglet <em>Attacks</em>, sélection du SSID cible, <em>Launch</em>. L'ESP32 démarre l'AP clone sur le même canal que la cible.</li>
+        <li><strong>Test depuis téléphone</strong> — connexion au faux AP, le portail captif s'affiche avec spinner, la vérification s'exécute, le mot de passe (s'il est correct) apparaît dans le panel <em>Passwords</em> avec status <code>success</code>.</li>
+      </ol>
+      <ol lang-block="en">
+        <li><strong>Boot</strong> — ESP32 starts, connects to the management Wi-Fi, sends first heartbeat. Dashboard shows it as <em>Online</em>.</li>
+        <li><strong>Scan</strong> — <em>Scan Networks</em> button or <code>scan</code> Serial command. SSID list appears in the <em>Networks</em> panel.</li>
+        <li><strong>Capture</strong> — pick a channel in <em>Captures → New Capture</em>, ESP32 enters promiscuous mode, captures for the chosen duration. Stop, then <em>Download</em> yields a <code>.pcap</code> directly openable in Wireshark.</li>
+        <li><strong>Evil Twin</strong> (on your own test network) — <em>Attacks</em> tab, pick target SSID, <em>Launch</em>. ESP32 starts the clone AP on the same channel as the target.</li>
+        <li><strong>Test from a phone</strong> — connect to the fake AP, captive portal opens with spinner, verification runs, the password (if valid) appears in the <em>Passwords</em> panel with status <code>success</code>.</li>
+      </ol>
+
+      <h2 lang-block="fr">Ce que le projet apprend</h2>
+      <h2 lang-block="en">What the project teaches</h2>
+
+      <p lang-block="fr">
+        Construire ce système m'a forcé à toucher à l'ensemble de la chaîne — des octets bruts d'une trame 802.11 jusqu'à une UI React qui les présente. Quelques apprentissages concrets :
+      </p>
+      <p lang-block="en">
+        Building this system forced me to touch the whole chain — from raw bytes of an 802.11 frame to a React UI that presents them. A few concrete takeaways:
+      </p>
+
+      <ul lang-block="fr">
+        <li>Une <strong>API REST contractuelle</strong> entre les deux composants permet de tester le firmware avec <code>curl</code> et le dashboard avec un mock — sans qu'aucun ESP32 ne soit branché.</li>
+        <li>Les <strong>state machines</strong> non bloquantes sur microcontrôleur sont indispensables dès qu'on veut combiner plusieurs comportements (capture, attaque, vérification, heartbeat) sans se faire kicker des watchdogs.</li>
+        <li>Les <strong>contre-mesures côté défense</strong> deviennent évidentes après avoir construit l'attaque : WPA3-SAE résiste aux attaques offline classiques, 802.11w (PMF) en mode <em>required</em> rend les deauth inopérantes, et la vérification stricte du certificat serveur côté client est le maillon faible le plus exploité en milieu enterprise.</li>
+        <li>Le <strong>cleanup de dépendances</strong> (passé de 70+ à 21 deps en v2.6) est un travail de fond qui réduit la surface d'attaque, accélère le build, et clarifie l'intention du projet.</li>
+      </ul>
+      <ul lang-block="en">
+        <li>A <strong>contractual REST API</strong> between the two components makes the firmware testable with <code>curl</code> and the dashboard testable with a mock — no ESP32 needed.</li>
+        <li>Non-blocking <strong>state machines</strong> on microcontrollers are mandatory the moment you want to combine multiple behaviors (capture, attack, verify, heartbeat) without getting kicked by watchdogs.</li>
+        <li><strong>Defensive countermeasures</strong> become obvious after building the attack: WPA3-SAE resists classic offline attacks, 802.11w (PMF) in <em>required</em> mode neutralizes deauth, and strict client-side server-cert validation is the most exploited weak link in enterprise environments.</li>
+        <li><strong>Dependency cleanup</strong> (dropped from 70+ to 21 deps in v2.6) is grunt work that reduces attack surface, speeds up builds, and clarifies the project's intent.</li>
+      </ul>
+
+      <h2 lang-block="fr">Roadmap</h2>
+      <h2 lang-block="en">Roadmap</h2>
+
+      <ul lang-block="fr">
+        <li>Mode <strong>observer-only</strong> : un WIDS minimal qui détecte un BSSID inattendu sur un ESSID connu (mise en miroir défensive du même hardware).</li>
+        <li>Test empirique <strong>WPA2 vs WPA3-SAE</strong> sur la même attaque, mesure de la latence et du taux de succès.</li>
+        <li>Vérification que <strong>802.11w (PMF) required</strong> neutralise effectivement les deauth bursts.</li>
+        <li>Port sur <strong>ESP32-C6</strong> (Wi-Fi 6 + 802.11w natif) pour tests WPA3 plus poussés.</li>
+        <li>Export <strong>JSON Lines</strong> structuré des événements pour pipeline d'analyse offline.</li>
+      </ul>
+      <ul lang-block="en">
+        <li><strong>Observer-only</strong> mode: minimal WIDS detecting unexpected BSSID under known ESSID (defensive mirror on the same hardware).</li>
+        <li>Empirical <strong>WPA2 vs WPA3-SAE</strong> test on the same attack, measuring latency and success rate.</li>
+        <li>Verify that <strong>802.11w (PMF) required</strong> actually neutralizes deauth bursts.</li>
+        <li>Port to <strong>ESP32-C6</strong> (Wi-Fi 6 + native 802.11w) for deeper WPA3 testing.</li>
+        <li>Structured <strong>JSON Lines</strong> export of events for offline analysis pipeline.</li>
+      </ul>
+
+      <h2 lang-block="fr">Références</h2>
+      <h2 lang-block="en">References</h2>
+
+      <ul>
+        <li>Vanhoef &amp; Piessens — <em>Key Reinstallation Attacks: Forcing Nonce Reuse in WPA2</em> · CCS 2017 (KRACK).</li>
+        <li>Vanhoef &amp; Ronen — <em>Dragonblood: Analyzing the Dragonfly Handshake of WPA3 and EAP-pwd</em> · 2019.</li>
+        <li>IEEE 802.11-2020 — Protected Management Frames (802.11w).</li>
+        <li>Espressif — ESP-IDF Programming Guide, Wi-Fi driver internals.</li>
+      </ul>
+
+      <div class="callout danger" style="margin-top:2.5rem;">
+        <span class="label" lang-block="fr">Rappel final</span>
+        <span class="label" lang-block="en">Final reminder</span>
+        <p lang-block="fr">
+          À des fins éducatives et de lab personnel uniquement. L'usage de ces techniques hors de votre propre infrastructure, sans autorisation écrite explicite de son propriétaire, est un délit pénal. Les disclaimers n'ont pas force de loi.
+        </p>
+        <p lang-block="en">
+          Educational and personal-lab use only. Using these techniques outside your own infrastructure, without explicit written authorization from its owner, is a criminal offense. Disclaimers carry no legal force.
+        </p>
+      </div>
+
+      <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border-soft);">
+        <a href="mailto:yassirmoussa754@gmail.com?subject=Acc%C3%A8s%20demand%C3%A9%20%E2%80%94%20esp32-wifi-auditor"
+           class="btn btn-primary">
+          <span lang-block="fr">Demander l'accès au code</span>
+          <span lang-block="en">Request source access</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span>© <span data-year></span> Moussa Yassir Mouyiwa</span>
+    <span class="hide-mobile">esp32-wifi-auditor v2.6 · ⏿ private</span>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
