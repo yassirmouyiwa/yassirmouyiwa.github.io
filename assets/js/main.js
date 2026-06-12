@@ -354,16 +354,34 @@
       const originalContent = submitBtn.innerHTML;
       submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
       submitBtn.disabled = true;
-      setTimeout(() => {
-        submitBtn.innerHTML = '<span>Sent!</span><i class="fas fa-check"></i>';
-        submitBtn.style.background = '#00cc6a';
+
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          submitBtn.innerHTML = '<span>Sent!</span><i class="fas fa-check"></i>';
+          submitBtn.style.background = '#00cc6a';
+          form.reset();
+          setTimeout(() => {
+            submitBtn.innerHTML = originalContent;
+            submitBtn.disabled = false;
+            submitBtn.style.background = '';
+          }, 2000);
+        } else {
+          throw new Error('Form submission failed');
+        }
+      }).catch(() => {
+        submitBtn.innerHTML = '<span>Error</span><i class="fas fa-times"></i>';
+        submitBtn.style.background = '#ff4757';
         setTimeout(() => {
           submitBtn.innerHTML = originalContent;
           submitBtn.disabled = false;
           submitBtn.style.background = '';
-          form.reset();
         }, 2000);
-      }, 1500);
+      });
     });
   }
 

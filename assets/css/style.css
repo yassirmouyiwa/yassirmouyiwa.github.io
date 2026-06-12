@@ -243,8 +243,8 @@ img, svg { max-width: 100%; display: block; }
     opacity: 0; animation: fadeInUp 0.6s ease forwards 1.25s;
 }
 .profile-img {
-    width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
-    border: 3px solid var(--accent); box-shadow: var(--glow);
+    width: 100px; height: 100px; border-radius: 50%; object-fit: cover;
+    border: 2px solid var(--accent); box-shadow: var(--glow);
     transition: var(--transition);
 }
 .profile-img:hover { box-shadow: var(--glow-strong); transform: scale(1.05); }
