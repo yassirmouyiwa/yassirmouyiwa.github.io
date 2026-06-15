@@ -60,9 +60,9 @@
 
   if (preloader) {
     const loadWords = [
-      'INITIALIZING','LOADING MODULES','INJECTING PAYLOADS',
-      'SCANNING PORTS','DECRYPTING','ESTABLISHING SHELL',
-      'BYPASSING FIREWALL','ACCESS GRANTED'
+      'Loading','Initializing','Compiling',
+      'Rendering','Decrypting','Connecting',
+      'Loading assets','Ready'
     ];
     let progress = 0;
     const loadInterval = setInterval(() => {
