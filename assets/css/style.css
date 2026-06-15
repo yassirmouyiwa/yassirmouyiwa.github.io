@@ -22,6 +22,7 @@
     --fg-subtle: #3a3a40;
     --border: rgba(0, 255, 136, 0.1);
     --border-hover: rgba(0, 255, 136, 0.3);
+    --border-soft: rgba(255, 255, 255, 0.05);
     --f-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
     --f-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
     --f-display: 'Orbitron', sans-serif;
@@ -54,8 +55,12 @@
 
 /* Lang switching */
 [lang-block] { display: none; }
-html[lang="fr"] [lang-block="fr"] { display: initial; }
-html[lang="en"] [lang-block="en"] { display: initial; }
+html[lang="fr"] [lang-block="fr"] { display: block; }
+html[lang="en"] [lang-block="en"] { display: block; }
+html[lang="fr"] [lang-block="fr"].inline,
+html[lang="en"] [lang-block="en"].inline { display: inline; }
+html[lang="fr"] [lang-block="fr"].inline-flex,
+html[lang="en"] [lang-block="en"].inline-flex { display: inline-flex; }
 html[lang="fr"] [lang-block="fr"].block-flex,
 html[lang="en"] [lang-block="en"].block-flex { display: flex; }
 
@@ -79,6 +84,7 @@ body {
     background: var(--bg-primary);
     overflow-x: hidden;
     min-height: 100vh;
+    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 ::selection { background: var(--accent); color: var(--bg-primary); }
@@ -679,6 +685,80 @@ pre {
 .cta-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
 .btn .arrow { transition: transform 0.18s ease; font-weight: 400; }
 .btn:hover .arrow { transform: translateX(2px); }
+
+/* ============================================
+   PROJECT DETAIL NAV (shared with all detail pages)
+   ============================================ */
+.nav {
+    position: sticky; top: 0; z-index: 1000;
+    background: rgba(10, 10, 15, 0.92); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border); padding: 12px 0;
+}
+.nav-inner {
+    max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px;
+}
+.nav .brand {
+    font-family: var(--f-mono); font-size: 1.1rem; font-weight: 600;
+    color: var(--fg); white-space: nowrap;
+    border-bottom: 1px solid var(--fg-subtle); padding-bottom: 2px; transition: var(--transition);
+}
+.nav .brand:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.nav-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.nav-links a {
+    font-size: 0.88rem; color: var(--fg-muted); padding: 6px 0;
+    border-bottom: 1px solid transparent; transition: var(--transition);
+}
+.nav-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.nav .nav-controls .icon-btn { width: 2.2em; height: 2.2em; }
+
+@media (max-width: 768px) {
+    .nav-inner { flex-wrap: wrap; padding: 0 16px; }
+    .nav-links { width: 100%; order: 3; justify-content: flex-start; margin-top: 8px; }
+    .nav .brand { font-size: 1rem; }
+}
+
+/* ============================================
+   LIGHT THEME OVERRIDES (project detail pages)
+   ============================================ */
+[data-theme="light"] .nav {
+    background: rgba(250, 250, 248, 0.92);
+    border-bottom-color: var(--border);
+}
+[data-theme="light"] .navbar.scrolled {
+    background: rgba(250, 250, 248, 0.95);
+    border-bottom-color: var(--border);
+}
+
+/* ============================================
+   PROJECT DETAIL FOOTER
+   ============================================ */
+footer {
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    font-family: var(--f-mono);
+    font-size: 0.78rem;
+    color: var(--fg-muted);
+    position: relative;
+    z-index: 1;
+}
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+footer a {
+    color: var(--fg-muted);
+    transition: color 0.15s ease;
+}
+footer a:hover { color: var(--accent); }
+.hide-mobile { }
+@media (max-width: 768px) {
+    .hide-mobile { display: none; }
+}
 
 /* ============================================
    RESPONSIVE

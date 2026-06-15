@@ -3,6 +3,24 @@
   "use strict";
   const html = document.documentElement;
 
+  /* — theme — */
+  const setTheme = (theme) => {
+    html.setAttribute("data-theme", theme);
+    const themeBtn = document.querySelector("[data-theme-toggle]");
+    if (themeBtn) themeBtn.textContent = theme === "dark" ? "☼" : "☾";
+    try { localStorage.setItem("yp-theme", theme); } catch (_) {}
+  };
+  let initialTheme = "dark";
+  try { const s = localStorage.getItem("yp-theme"); if (s === "dark" || s === "light") initialTheme = s; } catch (_) {}
+  setTheme(initialTheme);
+
+  const themeBtn = document.querySelector("[data-theme-toggle]");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      setTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
+    });
+  }
+
   /* — language — */
   const langBtn = document.querySelector("[data-lang-toggle]");
   const setLang = (lang) => {
@@ -166,9 +184,11 @@
     const navLinks = document.querySelectorAll(".nav-link");
 
     if (navbar) {
+      // Set initial state
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
       window.addEventListener("scroll", () => {
         navbar.classList.toggle("scrolled", window.scrollY > 50);
-      });
+      }, { passive: true });
     }
 
     if (navToggle && navMenu) {
@@ -197,7 +217,8 @@
   function initActiveNav() {
     const sections = document.querySelectorAll(".section, .hero-section");
     const navLinks = document.querySelectorAll(".nav-link");
-    window.addEventListener("scroll", () => {
+
+    function updateActiveNav() {
       let current = "";
       sections.forEach(section => {
         const sectionTop = section.offsetTop - 200;
@@ -207,28 +228,49 @@
         link.classList.remove("active");
         if (link.getAttribute("data-section") === current) link.classList.add("active");
       });
-    });
+    }
+
+    // Run on initial load
+    updateActiveNav();
+    window.addEventListener("scroll", updateActiveNav, { passive: true });
   }
 
   /* ============================================
      TYPING EFFECT
      ============================================ */
   function initTypedEffect() {
-    const typedElement = document.getElementById("typed-text");
-    if (!typedElement) return;
-    const phrases = [
+    const frPhrases = [
       'au niveau silicium et réseau',
-      'at the silicon and network layer',
       'des topologies réseau à la main',
-      'hand-built network topologies',
       'des firmwares embarqués bas niveau',
+      "des dashboards d'audit"
+    ];
+    const enPhrases = [
+      'at the silicon and network layer',
+      'hand-built network topologies',
       'low-level embedded firmware',
-      "des dashboards d'audit",
       'audit dashboards'
     ];
+
     let phraseIndex = 0, charIndex = 0, isDeleting = false, typingSpeed = 50;
+
+    function getTypedElement() {
+      const lang = html.getAttribute("lang") || "fr";
+      return lang === "fr"
+        ? document.querySelector("[data-typed-fr]")
+        : document.querySelector("[data-typed-en]");
+    }
+
+    function getPhrases() {
+      return (html.getAttribute("lang") || "fr") === "fr" ? frPhrases : enPhrases;
+    }
+
     function type() {
-      const currentPhrase = phrases[phraseIndex];
+      const typedElement = getTypedElement();
+      if (!typedElement) return;
+      const phrases = getPhrases();
+      const currentPhrase = phrases[phraseIndex % phrases.length];
+
       if (isDeleting) {
         typedElement.textContent = currentPhrase.substring(0, charIndex - 1);
         charIndex--;
@@ -374,7 +416,19 @@
           throw new Error('Form submission failed');
         }
       }).catch(() => {
-        submitBtn.innerHTML = '<span>Error</span><i class="fas fa-times"></i>';
+        try {
+          const n = form.querySelector('input[name="name"]').value;
+          const em = form.querySelector('input[name="email"]').value;
+          const subj = form.querySelector('input[name="subject"]').value;
+          const msg = form.querySelector('textarea[name="message"]').value;
+          const body = encodeURIComponent(`Name: ${n}\nEmail: ${em}\nSubject: ${subj}\n\n${msg}`);
+          const s = encodeURIComponent(`Contact: ${subj}`);
+          window.location.href = `mailto:yassirmoussa754@gmail.com?subject=${s}&body=${body}`;
+        } catch (err) {
+          console.error('Fallback mailto failed', err);
+        }
+
+        submitBtn.innerHTML = '<span>Fallback email</span><i class="fas fa-envelope"></i>';
         submitBtn.style.background = '#ff4757';
         setTimeout(() => {
           submitBtn.innerHTML = originalContent;
@@ -391,13 +445,14 @@
   function initBackToTop() {
     const backToTop = document.getElementById("back-to-top");
     if (!backToTop) return;
+    backToTop.classList.toggle("visible", window.scrollY > 500);
     window.addEventListener("scroll", () => {
       backToTop.classList.toggle("visible", window.scrollY > 500);
-    });
+    }, { passive: true });
   }
 
   /* ============================================
-     SMOOTH SCROLL
+     SMOOTH SCROLL (only for # anchors on main page)
      ============================================ */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
