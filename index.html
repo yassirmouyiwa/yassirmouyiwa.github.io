@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moussa Yassir Mouyiwa — Portfolio</title>
+  <meta name="description" content="Portfolio de Moussa Yassir Mouyiwa — Cybersécurité, systèmes embarqués, réseaux.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Background Grid + Gradient -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-gradient" aria-hidden="true"></div>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Retour en haut">
+        <span class="logo-bracket">[</span>MYM<span class="logo-bracket">]</span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#about" data-fr="À propos" data-en="About">À propos</a>
+        <a href="#projects" data-fr="Projets" data-en="Projects">Projets</a>
+        <a href="#stack" data-fr="Stack" data-en="Stack">Stack</a>
+        <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Changer de langue" title="FR / EN">
+          <span class="lang-current">FR</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="about">
+      <div class="container">
+        <div class="hero-badge reveal">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span data-fr="Disponible pour des opportunités" data-en="Open to opportunities">Disponible pour des opportunités</span>
+        </div>
+        <h1 class="hero-title reveal" data-delay="100">
+          <span class="line">Moussa Yassir</span>
+          <span class="line">Mouyiwa</span>
+        </h1>
+        <p class="hero-subtitle reveal" data-delay="200" data-fr="Cybersécurité, systèmes embarqués et réseaux." data-en="Cybersecurity, embedded systems and networks.">
+          Cybersécurité, systèmes embarqués et réseaux.
+        </p>
+        <p class="hero-desc reveal" data-delay="300" data-fr="Étudiant en sécurité informatique. J'explore la cryptographie, les protocoles réseau et le développement bas-niveau pour construire des systèmes résilients." data-en="Student in computer security. I explore cryptography, network protocols and low-level development to build resilient systems.">
+          Étudiant en sécurité informatique. J'explore la cryptographie, les protocoles réseau et le développement bas-niveau pour construire des systèmes résilients.
+        </p>
+        <div class="hero-actions reveal" data-delay="400">
+          <a href="#projects" class="btn btn-primary" data-fr="Voir les projets" data-en="View projects">Voir les projets</a>
+          <a href="https://www.linkedin.com/in/yassir-mouyiwa/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats / Quick Info -->
+    <section class="stats" aria-label="Quick stats">
+      <div class="container stats-grid">
+        <div class="stat-card reveal">
+          <span class="stat-number">3+</span>
+          <span class="stat-label" data-fr="Projets académiques" data-en="Academic projects">Projets académiques</span>
+        </div>
+        <div class="stat-card reveal" data-delay="100">
+          <span class="stat-number">2</span>
+          <span class="stat-label" data-fr="Langues (FR/EN)" data-en="Languages (FR/EN)">Langues (FR/EN)</span>
+        </div>
+        <div class="stat-card reveal" data-delay="200">
+          <span class="stat-number">CS</span>
+          <span class="stat-label" data-fr="Parcours sécurité" data-en="Security track">Parcours sécurité</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 data-fr="Projets" data-en="Projects">Projets</h2>
+          <p data-fr="Sélection de travaux académiques et personnels." data-en="A selection of academic and personal work.">Sélection de travaux académiques et personnels.</p>
+        </div>
+        <div class="projects-grid">
+          <!-- Project 1: Protocoles de Routage -->
+          <article class="project-card reveal" data-delay="100">
+            <div class="project-top">
+              <span class="project-tag academic" data-fr="Académique" data-en="Academic">Académique</span>
+              <div class="project-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+            </div>
+            <h3 class="project-title">Protocoles de Routage</h3>
+            <p class="project-desc" data-fr="Simulation et analyse de RIPv1, RIPv2, OSPF et routage statique sous Cisco Packet Tracer. Rapports de configuration et tests de connectivité inter-VLAN." data-en="Simulation and analysis of RIPv1, RIPv2, OSPF and static routing under Cisco Packet Tracer. Configuration reports and inter-VLAN connectivity tests.">Simulation et analyse de RIPv1, RIPv2, OSPF et routage statique sous Cisco Packet Tracer. Rapports de configuration et tests de connectivité inter-VLAN.</p>
+            <div class="project-stack">
+              <span class="pill">Cisco Packet Tracer</span>
+              <span class="pill">RIP</span>
+              <span class="pill">OSPF</span>
+              <span class="pill">VLAN</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/routing-protocols.html" class="link-arrow" data-fr="Voir le projet →" data-en="View project →">Voir le projet →</a>
+            </div>
+          </article>
+
+          <!-- Project 2: Encryption Scrypt -->
+          <article class="project-card reveal" data-delay="200">
+            <div class="project-top">
+              <span class="project-tag academic" data-fr="Académique" data-en="Academic">Académique</span>
+              <div class="project-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+            </div>
+            <h3 class="project-title">Encryption with Scrypt</h3>
+            <p class="project-desc" data-fr="Implémentation Python d'un chiffrement de fichiers basé sur Scrypt (KDF) et Fernet. Support du chiffrement récursif de dossiers avec gestion de sel." data-en="Python implementation of file encryption based on Scrypt (KDF) and Fernet. Supports recursive folder encryption with salt management.">Implémentation Python d'un chiffrement de fichiers basé sur Scrypt (KDF) et Fernet. Support du chiffrement récursif de dossiers avec gestion de sel.</p>
+            <div class="project-stack">
+              <span class="pill">Python</span>
+              <span class="pill">Cryptography</span>
+              <span class="pill">Scrypt</span>
+              <span class="pill">Fernet</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/encryption-scrypt.html" class="link-arrow" data-fr="Voir le projet →" data-en="View project →">Voir le projet →</a>
+            </div>
+          </article>
+
+          <!-- Project 3: PacketCraft -->
+          <article class="project-card reveal" data-delay="300">
+            <div class="project-top">
+              <span class="project-tag offensive" data-fr="Offensif" data-en="Offensive">Offensif</span>
+              <div class="project-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+            </div>
+            <h3 class="project-title">PacketCraft</h3>
+            <p class="project-desc" data-fr="Générateur de paquets réseau pour tests de pénétration et validation de règles de pare-feu. Protocoles TCP, UDP, ICMP, ARP avec injection rapide." data-en="Network packet generator for penetration testing and firewall rule validation. TCP, UDP, ICMP, ARP protocols with fast injection.">Générateur de paquets réseau pour tests de pénétration et validation de règles de pare-feu. Protocoles TCP, UDP, ICMP, ARP avec injection rapide.</p>
+            <div class="project-stack">
+              <span class="pill">Python</span>
+              <span class="pill">Scapy</span>
+              <span class="pill">Raw sockets</span>
+              <span class="pill">BPF</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/packetcraft.html" class="link-arrow" data-fr="Voir le projet →" data-en="View project →">Voir le projet →</a>
+            </div>
+          </article>
+
+          <!-- Project 4: Bluff -->
+          <article class="project-card reveal" data-delay="400">
+            <div class="project-top">
+              <span class="project-tag offensive" data-fr="Offensif" data-en="Offensive">Offensif</span>
+              <div class="project-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+            </div>
+            <h3 class="project-title">Bluff</h3>
+            <p class="project-desc" data-fr="Framework de man-in-the-middle et ARP spoofing pour tests d'audit de sécurité réseau. Capture et analyse de trames avec génération de rapports automatique." data-en="Man-in-the-middle and ARP spoofing framework for network security audit tests. Frame capture and analysis with automatic report generation.">Framework de man-in-the-middle et ARP spoofing pour tests d'audit de sécurité réseau. Capture et analyse de trames avec génération de rapports automatique.</p>
+            <div class="project-stack">
+              <span class="pill">Python</span>
+              <span class="pill">Scapy</span>
+              <span class="pill">NetfilterQueue</span>
+              <span class="pill">TLS</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/bluff.html" class="link-arrow" data-fr="Voir le projet →" data-en="View project →">Voir le projet →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stack -->
+    <section class="stack" id="stack">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 data-fr="Stack Technique" data-en="Tech Stack">Stack Technique</h2>
+          <p data-fr="Outils et technologies que j'utilise au quotidien." data-en="Tools and technologies I use on a daily basis.">Outils et technologies que j'utilise au quotidien.</p>
+        </div>
+        <div class="stack-grid reveal" data-delay="100">
+          <div class="stack-category">
+            <h4 data-fr="Langages" data-en="Languages">Langages</h4>
+            <div class="stack-items">
+              <span class="pill pill-lg">Python</span>
+              <span class="pill pill-lg">C</span>
+              <span class="pill pill-lg">C++</span>
+              <span class="pill pill-lg">Bash</span>
+            </div>
+          </div>
+          <div class="stack-category">
+            <h4 data-fr="Sécurité & Réseau" data-en="Security & Network">Sécurité & Réseau</h4>
+            <div class="stack-items">
+              <span class="pill pill-lg">Wireshark</span>
+              <span class="pill pill-lg">Nmap</span>
+              <span class="pill pill-lg">Metasploit</span>
+              <span class="pill pill-lg">Cisco PT</span>
+            </div>
+          </div>
+          <div class="stack-category">
+            <h4 data-fr="Systèmes & Outils" data-en="Systems & Tools">Systèmes & Outils</h4>
+            <div class="stack-items">
+              <span class="pill pill-lg">Linux</span>
+              <span class="pill pill-lg">Git</span>
+              <span class="pill pill-lg">Docker</span>
+              <span class="pill pill-lg">VS Code</span>
+            </div>
+          </div>
+          <div class="stack-category">
+            <h4 data-fr="Intérêts" data-en="Interests">Intérêts</h4>
+            <div class="stack-items">
+              <span class="pill pill-lg">Cryptographie</span>
+              <span class="pill pill-lg">Reverse</span>
+              <span class="pill pill-lg">Forensics</span>
+              <span class="pill pill-lg">IoT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="contact" id="contact">
+      <div class="container contact-inner reveal">
+        <h2 data-fr="Intéressé par un projet ou une collaboration ?" data-en="Interested in a project or collaboration?">Intéressé par un projet ou une collaboration ?</h2>
+        <p data-fr="Disponible pour des stages, des collaborations académiques ou des projets open-source dans le domaine de la cybersécurité." data-en="Available for internships, academic collaborations or open-source projects in the field of cybersecurity.">Disponible pour des stages, des collaborations académiques ou des projets open-source dans le domaine de la cybersécurité.</p>
+        <div class="contact-actions">
+          <a href="mailto:yassirmoussa754@gmail.com" class="btn btn-primary" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
+          <a href="https://www.linkedin.com/in/yassir-mouyiwa/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>
+        <span data-fr="Conçu et développé par" data-en="Designed and developed by">Conçu et développé par</span>
+        <strong>Moussa Yassir Mouyiwa</strong>
+        <span class="footer-sep">·</span>
+        <span id="currentYear">2026</span>
+      </p>
+      <p>
+        <a href="https://github.com/yassirmouyiwa" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:yassirmoussa754@gmail.com">Email</a>
+        <a href="#" id="backToTop" data-fr="Haut de page" data-en="Back to top">Haut de page</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
