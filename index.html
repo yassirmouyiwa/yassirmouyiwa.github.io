@@ -72,8 +72,8 @@
     <section class="stats" aria-label="Quick stats">
       <div class="container stats-grid">
         <div class="stat-card reveal">
-          <span class="stat-number">3+</span>
-          <span class="stat-label" data-fr="Projets académiques" data-en="Academic projects">Projets académiques</span>
+          <span class="stat-number">2</span>
+          <span class="stat-label" data-fr="Projets" data-en="Projects">Projets</span>
         </div>
         <div class="stat-card reveal" data-delay="100">
           <span class="stat-number">2</span>
@@ -115,16 +115,19 @@
             </div>
           </article>
 
-          <!-- Project 2: Encryption Scrypt -->
+          <!-- Project 2: Encryption Scrypt — OFFENSIF / PRIVÉ -->
           <article class="project-card reveal" data-delay="200">
             <div class="project-top">
-              <span class="project-tag academic" data-fr="Académique" data-en="Academic">Académique</span>
+              <div class="project-tags">
+                <span class="project-tag offensive" data-fr="Offensif" data-en="Offensive">Offensif</span>
+                <span class="project-tag restricted" data-fr="Accès sur demande" data-en="Request Access">Accès sur demande</span>
+              </div>
               <div class="project-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
             </div>
             <h3 class="project-title">Encryption with Scrypt</h3>
-            <p class="project-desc" data-fr="Implémentation Python d'un chiffrement de fichiers basé sur Scrypt (KDF) et Fernet. Support du chiffrement récursif de dossiers avec gestion de sel." data-en="Python implementation of file encryption based on Scrypt (KDF) and Fernet. Supports recursive folder encryption with salt management.">Implémentation Python d'un chiffrement de fichiers basé sur Scrypt (KDF) et Fernet. Support du chiffrement récursif de dossiers avec gestion de sel.</p>
+            <p class="project-desc" data-fr="Implémentation Python d'un chiffrement de fichiers basé sur Scrypt (KDF) et Fernet. Support du chiffrement récursif de dossiers avec gestion de sel. Repo privé — accès sur demande." data-en="Python implementation of file encryption based on Scrypt (KDF) and Fernet. Supports recursive folder encryption with salt management. Private repo — access on request.">Implémentation Python d'un chiffrement de fichiers basé sur Scrypt (KDF) et Fernet. Support du chiffrement récursif de dossiers avec gestion de sel. Repo privé — accès sur demande.</p>
             <div class="project-stack">
               <span class="pill">Python</span>
               <span class="pill">Cryptography</span>
@@ -133,48 +136,6 @@
             </div>
             <div class="project-links">
               <a href="projects/encryption-scrypt.html" class="link-arrow" data-fr="Voir le projet →" data-en="View project →">Voir le projet →</a>
-            </div>
-          </article>
-
-          <!-- Project 3: PacketCraft -->
-          <article class="project-card reveal" data-delay="300">
-            <div class="project-top">
-              <span class="project-tag offensive" data-fr="Offensif" data-en="Offensive">Offensif</span>
-              <div class="project-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              </div>
-            </div>
-            <h3 class="project-title">PacketCraft</h3>
-            <p class="project-desc" data-fr="Générateur de paquets réseau pour tests de pénétration et validation de règles de pare-feu. Protocoles TCP, UDP, ICMP, ARP avec injection rapide." data-en="Network packet generator for penetration testing and firewall rule validation. TCP, UDP, ICMP, ARP protocols with fast injection.">Générateur de paquets réseau pour tests de pénétration et validation de règles de pare-feu. Protocoles TCP, UDP, ICMP, ARP avec injection rapide.</p>
-            <div class="project-stack">
-              <span class="pill">Python</span>
-              <span class="pill">Scapy</span>
-              <span class="pill">Raw sockets</span>
-              <span class="pill">BPF</span>
-            </div>
-            <div class="project-links">
-              <a href="projects/packetcraft.html" class="link-arrow" data-fr="Voir le projet →" data-en="View project →">Voir le projet →</a>
-            </div>
-          </article>
-
-          <!-- Project 4: Bluff -->
-          <article class="project-card reveal" data-delay="400">
-            <div class="project-top">
-              <span class="project-tag offensive" data-fr="Offensif" data-en="Offensive">Offensif</span>
-              <div class="project-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              </div>
-            </div>
-            <h3 class="project-title">Bluff</h3>
-            <p class="project-desc" data-fr="Framework de man-in-the-middle et ARP spoofing pour tests d'audit de sécurité réseau. Capture et analyse de trames avec génération de rapports automatique." data-en="Man-in-the-middle and ARP spoofing framework for network security audit tests. Frame capture and analysis with automatic report generation.">Framework de man-in-the-middle et ARP spoofing pour tests d'audit de sécurité réseau. Capture et analyse de trames avec génération de rapports automatique.</p>
-            <div class="project-stack">
-              <span class="pill">Python</span>
-              <span class="pill">Scapy</span>
-              <span class="pill">NetfilterQueue</span>
-              <span class="pill">TLS</span>
-            </div>
-            <div class="project-links">
-              <a href="projects/bluff.html" class="link-arrow" data-fr="Voir le projet →" data-en="View project →">Voir le projet →</a>
             </div>
           </article>
         </div>

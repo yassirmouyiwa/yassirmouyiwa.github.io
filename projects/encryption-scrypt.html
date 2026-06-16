@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encryption with Scrypt — Moussa Yassir Mouyiwa</title>
+  <meta name="description" content="Implémentation Python d'un chiffrement de fichiers basé sur Scrypt (KDF) et Fernet.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-gradient" aria-hidden="true"></div>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo" aria-label="Retour au portfolio">
+        <span class="logo-bracket">[</span>MYM<span class="logo-bracket">]</span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="../index.html#about">À propos</a>
+        <a href="../index.html#projects">Projets</a>
+        <a href="../index.html#stack">Stack</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <div class="container">
+      <a href="../index.html#projects" class="project-back">← Retour aux projets</a>
+
+      <div class="project-page-header">
+        <div class="project-tags">
+          <span class="project-tag offensive">Offensif</span>
+          <span class="project-tag restricted">Accès sur demande</span>
+          <span class="project-tag" style="background:rgba(239,68,68,0.1);color:#f87171;border:1px solid rgba(239,68,68,0.2);">Privé</span>
+        </div>
+        <h1>Encryption with Scrypt</h1>
+        <p class="project-desc">Implémentation Python d'un chiffrement de fichiers basé sur Scrypt (KDF) et Fernet. Support du chiffrement récursif de dossiers avec gestion de sel.</p>
+        <div class="project-stack">
+          <span class="pill">Python</span>
+          <span class="pill">Cryptography</span>
+          <span class="pill">Scrypt</span>
+          <span class="pill">Fernet</span>
+        </div>
+        <div class="project-meta">
+          <div class="meta-item"><strong>Status :</strong> Privé</div>
+          <div class="meta-item"><strong>Accès :</strong> Sur demande uniquement</div>
+        </div>
+      </div>
+
+      <div class="project-readme">
+        <div class="warning-box">
+          <p>⚠️ Avertissement légal — La loi marocaine 07-03, articles 607-3 et 607-10, punit la mise à disposition publique d'outils offensifs. Ce repo est privé et son accès est strictement limité. Toute utilisation doit se faire dans un cadre légal et avec l'autorisation explicite du propriétaire des systèmes testés.</p>
+        </div>
+
+        <h2>Description</h2>
+        <p>Implémentation Python d'un outil de chiffrement de fichiers basé sur la fonction de dérivation de clé Scrypt et le chiffrement symétrique Fernet. Le programme supporte le chiffrement récursif de dossiers avec gestion de sel cryptographique. Conçu pour la recherche en sécurité et l'apprentissage de la cryptographie appliquée.</p>
+
+        <h2>Stack technique</h2>
+        <table>
+          <thead><tr><th>Composant</th><th>Technologie</th></tr></thead>
+          <tbody>
+            <tr><td>Langage</td><td>Python</td></tr>
+            <tr><td>Cryptographie</td><td>Scrypt (KDF), Fernet (symmetric)</td></tr>
+            <tr><td>Librairie</td><td>cryptography (Python)</td></tr>
+            <tr><td>Gestion</td><td>Sel, clé dérivée, récursivité</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Fonctionnalités</h2>
+        <ul>
+          <li>Chiffrement et déchiffrement de fichiers individuels</li>
+          <li>Chiffrement récursif de dossiers entiers</li>
+          <li>Gestion automatique du sel cryptographique</li>
+          <li>Dérivation de clé via Scrypt avec paramètres configurables</li>
+        </ul>
+
+        <h2>Installation</h2>
+        <pre><code>pip install cryptography
+python main.py --help</code></pre>
+
+        <h2>Utilisation</h2>
+        <pre><code># Chiffrer un fichier
+python main.py encrypt --input secret.txt --output secret.enc
+
+# Chiffrer un dossier récursivement
+python main.py encrypt --input ./dossier/ --recursive
+
+# Déchiffrer
+python main.py decrypt --input secret.enc --output secret.txt</code></pre>
+
+        <h2>Roadmap</h2>
+        <ul>
+          <li>✅ Chiffrement/déchiffrement fichier unique</li>
+          <li>✅ Chiffrement récursif de dossiers</li>
+          <li>✅ Gestion du sel Scrypt</li>
+          <li>⬜ Support chiffrement asymétrique (RSA)</li>
+          <li>⬜ Interface CLI avancée avec progress bar</li>
+        </ul>
+      </div>
+
+      <div class="project-actions">
+        <a href="https://github.com/yassirmouyiwa/encryption-with-Scrypt-Algorithm" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:rgba(251,191,36,0.15);color:#fbbf24;border:1px solid rgba(251,191,36,0.3);">Demander l'accès →</a>
+        <a href="mailto:yassirmoussa754@gmail.com" class="btn btn-ghost">📧 Contacter par email</a>
+        <a href="../index.html#projects" class="btn btn-ghost">← Retour</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Moussa Yassir Mouyiwa</strong> <span class="footer-sep">·</span> 2026</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
