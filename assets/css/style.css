@@ -476,6 +476,26 @@ button {
   flex-shrink: 0;
 }
 
+.btn-icon {
+  gap: var(--space-2);
+}
+
+.header-gh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.header-gh:hover {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
 /* --- Stats --- */
 .stats {
   padding-bottom: var(--space-24);
@@ -591,6 +611,12 @@ button {
   background: rgba(239, 68, 68, 0.1);
   color: #f87171;
   border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.project-tag.personal {
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .project-tag.restricted {
@@ -809,6 +835,11 @@ button {
 .footer-sep {
   color: var(--text-muted);
   opacity: 0.5;
+}
+
+/* --- Back to top (smooth) --- */
+#backToTop {
+  cursor: pointer;
 }
 
 /* --- Reveal Animations --- */
