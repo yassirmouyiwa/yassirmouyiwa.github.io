@@ -625,6 +625,12 @@ button {
   border: 1px solid rgba(251, 191, 36, 0.2);
 }
 
+.project-tag.dev {
+  background: rgba(249, 115, 22, 0.1);
+  color: #fb923c;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
 .project-tags {
   display: flex;
   align-items: center;
