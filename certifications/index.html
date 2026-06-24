@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications — Moussa Yassir Mouyiwa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #0a0a0a; --surface: rgba(255,255,255,0.03); --border: rgba(255,255,255,0.08); --text: #e6e6e6; --text-secondary: #888; --accent: #f0f0f0; --font-sans: 'Inter', sans-serif; --font-mono: 'JetBrains Mono', monospace; }
+    [data-theme="light"] { --bg: #f4f4f5; --surface: rgba(0,0,0,0.04); --border: rgba(0,0,0,0.1); --text: #18181b; --text-secondary: #71717a; --accent: #18181b; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; backdrop-filter: blur(16px); background: var(--bg); opacity: 0.95; border-bottom: 1px solid var(--border); padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: var(--font-mono); font-weight: 700; font-size: 18px; color: var(--text); }
+    .logo span { color: var(--text-secondary); margin: 0 4px; }
+    .back-link { font-size: 14px; color: var(--text-secondary); transition: color 0.3s; }
+    .back-link:hover { color: var(--text); }
+    .coming-soon { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 120px 24px 80px; text-align: center; }
+    .coming-icon { font-size: 80px; margin-bottom: 24px; opacity: 0.3; }
+    .coming-title { font-size: 48px; font-weight: 800; letter-spacing: -2px; margin-bottom: 16px; }
+    .coming-desc { font-size: 18px; color: var(--text-secondary); max-width: 400px; line-height: 1.6; margin-bottom: 32px; }
+    .badge-coming { display: inline-block; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 6px 16px; font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); }
+    .btn-back { display: inline-flex; align-items: center; gap: 8px; margin-top: 40px; padding: 12px 24px; background: var(--text); color: var(--bg); border-radius: 10px; font-weight: 600; font-size: 14px; transition: opacity 0.3s; }
+    .btn-back:hover { opacity: 0.8; }
+    footer { text-align: center; padding: 24px; color: var(--text-secondary); font-size: 13px; border-top: 1px solid var(--border); margin-top: auto; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo"><span>[</span>MYM<span>]</span></a>
+    <a href="/" class="back-link">← Retour au portfolio</a>
+  </header>
+  <main class="coming-soon">
+    <div class="coming-icon">🏆</div>
+    <h1 class="coming-title">Certifications</h1>
+    <p class="coming-desc">Mes certifications en cybersécurité et réseaux sont en cours d'obtention. Revenez bientôt.</p>
+    <span class="badge-coming">Coming soon...</span>
+    <a href="/" class="btn-back">← Retour au portfolio</a>
+  </main>
+  <footer>Moussa Yassir Mouyiwa · 2026</footer>
+</body>
+</html>

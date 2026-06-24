@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Writeups — Moussa Yassir Mouyiwa</title>
+  <title>My Writeups — [ MYM ]</title>
   <meta name="description" content="Writeups CTF, vulnérabilités et analyse de sécurité.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,66 +11,58 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="bg-grid"></div>
-  <div class="bg-gradient"></div>
-
-  <!-- Header -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-gradient" aria-hidden="true"></div>
   <header class="site-header">
     <div class="container header-inner">
-        <a href="/" class="logo">
-        <span class="logo-bracket"><</span>MYM<span class="logo-bracket">></span>
-      </a>
+      <a href="/" class="logo"><span class="logo-bracket">[</span>MYM<span class="logo-bracket">]</span></a>
       <nav class="main-nav">
-        <a href="/#projects" id="projectsPageLink">Projets</a>
-        <a href="#home" id="writeupsPageLink" aria-current="page">Writeups</a>
+        <a href="/#projects">Projets</a>
+        <a href="#" aria-current="page">My Writeups</a>
       </nav>
       <div class="header-actions">
         <div class="theme-dropdown" id="themeDropdown">
-          <button class="theme-toggle-btn" id="themeBtn" aria-label="Changer le thème">Theme</button>
-          <div class="theme-options">
-            <div class="theme-opt active" data-theme="dark">Sombre</div>
-            <div class="theme-opt" data-theme="light">Clair</div>
+          <button class="theme-toggle-btn" id="themeBtn" aria-label="Changer de thème"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></button>
+          <div class="theme-options" id="themeOptions">
+            <button class="theme-opt active" data-theme="dark">Dark</button>
+            <button class="theme-opt" data-theme="light">Light</button>
           </div>
         </div>
-        <button class="lang-toggle" id="langToggle" aria-label="Changer de langue">FR</button>
+        <button class="lang-toggle" id="langToggle" aria-label="Changer de langue"><span class="lang-current">FR</span></button>
       </div>
     </div>
   </header>
-
   <main>
-    <!-- Hero -->
-    <section class="writeups-hero" id="home">
-      <div class="container hero-container">
-        <div class="hero-content">
-          <span class="hero-badge">
-            <span class="badge-dot"></span>
-            <span class="badge-text">Writeups & Analyses</span>
-          </span>
-          <h1 class="hero-title writeup-hero-title">My Writeups</h1>
-          <p class="hero-desc">Rétro-ingénierie, pwn, web exploitation, et plus encore. Documentés avec rigueur.</p>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge"><span class="badge-dot"></span><span class="badge-text" data-fr="CTF · Vulnérabilités · Analyse" data-en="CTF · Vulnerabilities · Analysis">CTF · Vulnérabilités · Analyse</span></div>
+        <h1 class="hero-title">My Writeups</h1>
+        <p class="hero-subtitle" data-fr="Rétro-ingénierie, pwn, web exploitation, et plus encore. Documentés avec rigueur." data-en="Reverse engineering, pwn, web exploitation, and more. Documented with rigor.">Rétro-ingénierie, pwn, web exploitation, et plus encore. Documentés avec rigueur.</p>
+        <div class="hero-stats">
+          <div class="stat-pill"><span id="writeupCount">0</span> <span data-fr="writeups" data-en="writeups">writeups</span></div>
+          <div class="stat-pill"><span class="cat-count">0</span> <span data-fr="catégories" data-en="categories">catégories</span></div>
         </div>
       </div>
     </section>
-
-    <!-- Writeups Section -->
-    <section class="writeups" id="writeups">
+    <section class="filters-bar">
+      <div class="container filters-inner">
+        <button class="filter-btn active" data-filter="all" data-fr="Tous" data-en="All">Tous</button>
+        <button class="filter-btn" data-filter="ctf" data-fr="CTF" data-en="CTF">CTF</button>
+        <button class="filter-btn" data-filter="web" data-fr="Web" data-en="Web">Web</button>
+        <button class="filter-btn" data-filter="crypto" data-fr="Crypto" data-en="Crypto">Crypto</button>
+        <button class="filter-btn" data-filter="osint" data-fr="OSINT" data-en="OSINT">OSINT</button>
+        <button class="filter-btn" data-filter="forensics" data-fr="Forensics" data-en="Forensics">Forensics</button>
+        <button class="filter-btn" data-filter="pwn" data-fr="Pwn" data-en="Pwn">Pwn</button>
+      </div>
+    </section>
+    <section class="writeups-section">
       <div class="container">
-        <div class="section-header">
-          <h2>Tous les Writeups</h2>
-          <p>Archives complètes de mes analyses et résolutions.</p>
-        </div>
-        <div class="writeups-grid" id="writeupsList">
-          <!-- Writeups injected via JS -->
-        </div>
+        <div class="writeups-grid" id="writeupsList"></div>
+        <div class="empty-state" id="emptyState" style="display:none;"><p data-fr="Aucun writeup dans cette catégorie." data-en="No writeups in this category.">Aucun writeup dans cette catégorie.</p></div>
       </div>
     </section>
   </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p id="footer-text" style="margin:0;">— Documente ton trajet, partage ta perspective. —</p>
-  </footer>
-
+  <footer class="site-footer"><p>— Documente ton trajet, partage ta perspective. —</p></footer>
   <script src="app.js" defer></script>
 </body>
 </html>

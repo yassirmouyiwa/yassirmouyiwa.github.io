@@ -1,207 +1,89 @@
-/* ============================================================
-   MYM Writeups — Application (Complete)
-   ============================================================ */
+(() => {
+'use strict';
+const $ = sel => document.querySelector(sel);
+const $$ = sel => document.querySelectorAll(sel);
 
-/* -----------------------------------------------------------
-   DATA
-   ----------------------------------------------------------- */
-const writeups = [
-  {
-    id: 'htb-jeeves',
-    title: 'Jeeves — Windows Privilege Escalation to SYSTEM',
-    date: '2026-03-15',
-    lang: 'EN',
-    desc: 'Enumeration via SMB and exploit of Jenkins for initial foothold. Privilege escalation using JuicyPotato to gain SYSTEM access.',
-    tags: ['HackTheBox', 'Windows', 'Privilege Escalation', 'Medium'],
-    url: 'https://app.hackthebox.com/machines/Jeeves',
-  },
-  {
-    id: 'htb-legacy',
-    title: 'Legacy — Exploiting EternalBlue (MS17-010)',
-    date: '2026-01-10',
-    lang: 'EN',
-    desc: 'Rapid exploitation of SMB vulnerability on Windows XP. Full walkthrough of payload delivery using Metasploit and manual exploitation.',
-    tags: ['HackTheBox', 'Windows', 'CVE', 'Easy'],
-    url: 'https://app.hackthebox.com/machines/Legacy',
-  },
-  {
-    id: 'thm-vulnversity',
-    title: 'Vulnversity — Reconnaissance and Web Exploitation',
-    date: '2025-11-22',
-    lang: 'FR',
-    desc: 'Scan avec Nmap, énumération de services et upload de reverse shell via bypass de filtre d\'extension.',
-    tags: ['TryHackMe', 'Web', 'Linux', 'Easy'],
-    url: 'https://tryhackme.com/room/vulnversity',
-  },
-  {
-    id: 'htb-dog',
-    title: 'Dog — Upload chaining and service abuse',
-    date: '2025-09-05',
-    lang: 'EN',
-    desc: 'Exploitation of a vulnerable PHP upload endpoint. Chaining with service abuse to read sensitive files.',
-    tags: ['HackTheBox', 'Web', 'Linux', 'Medium'],
-    url: 'https://app.hackthebox.com/machines/Dog',
-  },
-  {
-    id: 'cryptopals-set1',
-    title: 'Cryptopals — Set 1 : Basics',
-    date: '2025-07-18',
-    lang: 'FR',
-    desc: 'Implémentation manuelle de la cryptographie classique : hex, base64, XOR, détection d\'AES ECB et scoring de texte.',
-    tags: ['Cryptography', 'Python', 'Beginner'],
-    url: 'https://cryptopals.com/sets/1',
-  },
+const writeupsData = [
+  { id: 1, title: 'SQL Injection — PortSwigger Lab', category: 'web', platform: 'PortSwigger', date: '2026-01-15', difficulty: 'Intermédiaire', fr: 'Exploitation d\'une faille SQL injection pour extraire des données de la base.', en: 'Exploiting SQL injection vulnerability to extract database data.', tags: ['SQL', 'Web', 'Auth'] },
+  { id: 2, title: 'Buffer Overflow — Protostar Stack 0', category: 'pwn', platform: 'Exploit-Exercises', date: '2026-01-20', difficulty: 'Débutant', fr: 'Première exploitation d\'un buffer overflow sur la pile.', en: 'First stack-based buffer overflow exploitation.', tags: ['Pwn', 'Binary', 'Stack'] },
+  { id: 3, title: 'XSS Stockée — DVWA Medium', category: 'web', platform: 'DVWA', date: '2026-02-01', difficulty: 'Intermédiaire', fr: 'Injection XSS stockée pour voler les cookies de session.', en: 'Stored XSS injection to steal session cookies.', tags: ['XSS', 'Web', 'Session'] },
+  { id: 4, title: 'RSA Factorisation — Factor Challenge', category: 'crypto', platform: 'Root-Me', date: '2026-02-10', difficulty: 'Facile', fr: 'Factorisation d\'une clé RSA faible pour déchiffrer un message.', en: 'Factoring weak RSA key to decrypt a message.', tags: ['RSA', 'Crypto', 'Factor'] },
+  { id: 5, title: 'Énumération OSINT — Find the Agent', category: 'osint', platform: 'TryHackMe', date: '2026-02-15', difficulty: 'Facile', fr: 'Localisation d\'un agent à travers les traces numériques laissées.', en: 'Locating an agent through digital traces left behind.', tags: ['OSINT', 'Geo', 'Social'] },
+  { id: 6, title: 'Forensic — HTTP Traffic Analysis', category: 'forensics', platform: 'CyberDefenders', date: '2026-03-01', difficulty: 'Intermédiaire', fr: 'Analyse de captures PCAP pour identifier une intrusion.', en: 'Analyzing PCAP captures to identify an intrusion.', tags: ['Forensics', 'PCAP', 'Network'] },
 ];
 
-const i18n = {
-  fr: {
-    projectsPage: 'Projets',
-    writeupsPage: 'Writeups',
-    badge: 'Writeups & Analyses',
-    heroTitle: 'My Writeups',
-    heroDesc: 'Rétro-ingénierie, pwn, web exploitation, et plus encore. Documentés avec rigueur.',
-    sectionTitle: 'Tous les Writeups',
-    sectionDesc: 'Archives complètes de mes analyses et résolutions.',
-    empty: 'Il n\'y a pas encore de writeups. Revenez bientôt…',
-    readMore: 'Lire le writeup →',
-    footer: '— Documente ton trajet, partage ta perspective. —',
-    langLabel: 'FR',
-    themeAuto: 'Système',
-    themeDark: 'Sombre',
-    themeLight: 'Clair',
-    themeLabel: 'Thème',
-    pubDate: 'Publié le',
-  },
-  en: {
-    projectsPage: 'Projects',
-    writeupsPage: 'Writeups',
-    badge: 'Writeups & Analysis',
-    heroTitle: 'My Writeups',
-    heroDesc: 'Reverse engineering, pwn, web exploitation, and more. Rigorously documented.',
-    sectionTitle: 'All Writeups',
-    sectionDesc: 'Complete archives of my analyses and resolutions.',
-    empty: 'No writeups yet. Check back soon…',
-    readMore: 'Read writeup →',
-    footer: '— Document your journey, share your perspective. —',
-    langLabel: 'EN',
-    themeAuto: 'System',
-    themeDark: 'Dark',
-    themeLight: 'Light',
-    themeLabel: 'Theme',
-    pubDate: 'Published on',
-  },
-};
-
-/* -----------------------------------------------------------
-   THEME / LANG STATE
-   ----------------------------------------------------------- */
 let currentLang = localStorage.getItem('mym-lang') || 'fr';
 let currentTheme = localStorage.getItem('mym-theme') || 'dark';
+let currentFilter = 'all';
 
-/* -----------------------------------------------------------
-   THEME / LANG LOGIC
-   ----------------------------------------------------------- */
-function applyTheme(theme) {
-  document.documentElement.dataset.theme = theme;
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('mym-theme', theme);
   currentTheme = theme;
+  $$('.theme-opt').forEach(el => el.classList.toggle('active', el.dataset.theme === theme));
 }
-applyTheme(currentTheme);
 
-function switchLang(lang) {
+function setLang(lang) {
   currentLang = lang;
   localStorage.setItem('mym-lang', lang);
-  document.getElementById('langToggle').textContent = i18n[lang].langLabel;
-  render();
+  applyTranslations();
+  renderWriteups(currentFilter);
 }
 
-function switchTheme(theme) {
-  currentTheme = theme;
-  localStorage.setItem('mym-theme', theme);
-  applyTheme(theme);
-  document.querySelectorAll('.theme-opt').forEach(el => el.classList.toggle('active', el.dataset.theme === theme));
+function applyTranslations() {
+  $$('[data-fr][data-en]').forEach(el => el.textContent = el.dataset[currentLang] || el.textContent);
+  const langBtn = $('#langToggle');
+  if (langBtn) langBtn.querySelector('.lang-current').textContent = currentLang.toUpperCase();
+  document.documentElement.lang = currentLang === 'fr' ? 'fr' : 'en';
 }
 
-/* -----------------------------------------------------------
-   RENDER
-   ----------------------------------------------------------- */
-function render() {
-  const t = i18n[currentLang];
-  // Page texts
-  document.getElementById('projectsPageLink').textContent = t.projectsPage;
-  document.getElementById('writeupsPageLink').textContent = t.writeupsPage;
-  document.getElementById('writeupsPageLink').setAttribute('aria-current', 'page');
-  document.querySelector('.hero-badge span').textContent = t.badge;
-  document.querySelector('.hero-title').textContent = t.heroTitle;
-  document.querySelector('.hero-desc').textContent = t.heroDesc;
-  document.querySelector('section.writeups > .section-header h2').textContent = t.sectionTitle;
-  document.querySelector('section.writeups > .section-header p').textContent = t.sectionDesc;
-  document.getElementById('footer-text').textContent = t.footer;
-  // theme label removed — button shows icon only
+function buildCard(w) {
+  const desc = currentLang === 'fr' ? w.fr : w.en;
+  const readLabel = currentLang === 'fr' ? 'Lire →' : 'Read →';
+  return `<article class="writeup-card"><div class="writeup-header"><h3 class="writeup-title">${w.title}</h3><span class="writeup-badge">${w.category.toUpperCase()}</span></div><div class="writeup-meta"><span class="writeup-date">${w.date}</span><span class="writeup-platform">${w.platform}</span></div><p class="writeup-desc">${desc}</p><div class="writeup-tags">${w.tags.map(t => `<span class="writeup-tag">${t}</span>`).join('')}</div><a href="#" class="writeup-link">${readLabel}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></article>`;
+}
 
-  // Render writeups list
-  const list = document.getElementById('writeupsList');
-  if (!writeups.length) {
-    list.innerHTML = '<p class="empty-state">' + t.empty + '</p>';
-    return;
-  }
+function renderWriteups(filter) {
+  const list = $('#writeupsList');
+  const empty = $('#emptyState');
+  if (!list) return;
+  const filtered = filter === 'all' ? writeupsData : writeupsData.filter(w => w.category === filter);
+  list.innerHTML = filtered.length === 0 ? '' : filtered.map(buildCard).join('');
+  if (empty) empty.style.display = filtered.length === 0 ? 'block' : 'none';
+  $('#writeupCount').textContent = writeupsData.length;
+  document.querySelector('.cat-count').textContent = [...new Set(writeupsData.map(w => w.category))].length;
+}
 
-  list.innerHTML = '';
-  writeups.forEach((w, i) => {
-    const card = document.createElement('article');
-    card.className = 'writeup-card reveal';
-    card.style.transitionDelay = (i * 100) + 'ms';
-    card.onclick = () => window.open(w.url, '_blank');
-    card.innerHTML = `
-      <div class="writeup-date">${w.date}</div>
-      <div class="writeup-content">
-        <div class="writeup-meta">
-          <span class="writeup-lang">${w.lang}</span>
-        </div>
-        <h3 class="writeup-title">${w.title}</h3>
-        <p class="writeup-desc">${w.desc}</p>
-        <div class="writeup-tags">
-          ${w.tags.map(tag => `<span class="writeup-tag">${tag}</span>`).join('')}
-        </div>
-      </div>
-    `;
-    list.appendChild(card);
-  });
+function setupThemeDropdown() {
+  const dd = $('#themeDropdown');
+  if (!dd) return;
+  $('#themeBtn').addEventListener('click', e => { e.stopPropagation(); dd.classList.toggle('open'); });
+  document.addEventListener('click', e => { if (!dd.contains(e.target)) dd.classList.remove('open'); });
+  $$('.theme-opt').forEach(btn => btn.addEventListener('click', () => { setTheme(btn.dataset.theme); dd.classList.remove('open'); }));
+}
 
-  // IntersectionObserver for reveal
-  setTimeout(() => {
-    document.querySelectorAll('.reveal').forEach(el => {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-      }, { threshold: 0.1 });
-      observer.observe(el);
+function setupLangToggle() {
+  const btn = $('#langToggle');
+  if (btn) btn.addEventListener('click', () => setLang(currentLang === 'fr' ? 'en' : 'fr'));
+}
+
+function setupFilters() {
+  $$('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      $$('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      renderWriteups(currentFilter);
     });
-  }, 50);
+  });
 }
 
-/* -----------------------------------------------------------
-   INIT
-   ----------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
-  render();
-
-  // Theme dropdown
-  const themeBtn = document.getElementById('themeBtn');
-  const dropdown = document.getElementById('themeDropdown');
-  themeBtn.addEventListener('click', () => dropdown.classList.toggle('open'));
-  document.addEventListener('click', e => {
-    if (!dropdown.contains(e.target) && e.target !== themeBtn) dropdown.classList.remove('open');
-  });
-
-  document.querySelectorAll('.theme-opt').forEach(btn => {
-    btn.addEventListener('click', () => switchTheme(btn.dataset.theme));
-  });
-
-  // Lang toggle
-  document.getElementById('langToggle').addEventListener('click', () => {
-    const newLang = currentLang === 'fr' ? 'en' : 'fr';
-    switchLang(newLang);
-  });
-
-  // Theme active
-  document.querySelectorAll('.theme-opt').forEach(el => el.classList.toggle('active', el.dataset.theme === currentTheme));
+  setTheme(currentTheme);
+  applyTranslations();
+  setupThemeDropdown();
+  setupLangToggle();
+  setupFilters();
+  renderWriteups('all');
 });
+})();
