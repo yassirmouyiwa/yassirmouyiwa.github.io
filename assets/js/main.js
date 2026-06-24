@@ -64,7 +64,7 @@
 
   /* --- Theme Dropdown --- */
   function setupThemeDropdown() {
-    const themeBtn = $('#themeToggleBtn');
+    const themeBtn = $('#themeBtn');
     const dropdown = $('#themeDropdown');
     if (!themeBtn || !dropdown) return;
 
