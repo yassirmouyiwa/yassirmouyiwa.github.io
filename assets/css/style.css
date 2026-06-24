@@ -124,19 +124,101 @@ a { color:inherit; text-decoration:none; }
 .btn-icon svg { flex-shrink:0; }
 
 /* --- Cyber Avatar --- */
-.hero-avatar-area { flex:0 0 320px; display:flex; justify-content:center; align-items:center; perspective: 1000px; }
-.cyber-avatar { width:300px; height:300px; position:relative; }
-.cyber-avatar svg { width:100%; height:100%; filter: drop-shadow(0 0 20px rgba(230,230,230,0.1)); }
-.cyber-avatar .aura-pulse { animation: aura-rotate 8s linear infinite; transform-origin: center; }
-.cyber-avatar .circuit-path { animation: circuit-glow 3s ease-in-out infinite; }
-.cyber-avatar .eye-glow { animation: eye-blink 4s ease-in-out infinite; }
+.hero-avatar-area { flex:0 0 380px; display:flex; justify-content:center; align-items:center; perspective: 1000px; }
+.cyber-avatar { width:380px; height:380px; position:relative; }
+.cyber-avatar svg { width:100%; height:100%; filter: drop-shadow(0 0 30px rgba(0,240,255,0.15)); }
 
-@keyframes aura-rotate { from{transform:rotate(0)} to{transform:rotate(360)} }
-@keyframes circuit-glow { 0%,100%{opacity:0.3} 50%{opacity:1} }
-@keyframes eye-blink { 0%,45%,55%,100%{opacity:0.9} 50%{opacity:0.3} }
+/* Aura rings animation */
+.cyber-avatar .aura-ring { animation: aura-pulse 3s ease-in-out infinite; transform-origin: center; }
+@keyframes aura-pulse { 
+  0%,100%{ opacity:0.1; transform: scale(1); } 
+  50%{ opacity:0.25; transform: scale(1.05); } 
+}
 
-/* Avatar hover effect */
-.cyber-avatar:hover .aura-pulse { animation-duration: 3s; }
+/* Hair strands floating */
+.cyber-avatar .hair-strand { 
+  fill:none; stroke:#00f0ff; stroke-width:0.8; opacity:0.4;
+  animation: hair-float 4s ease-in-out infinite; 
+  transform-origin: top center;
+}
+.cyber-avatar .hair-strand:nth-child(2) { animation-delay:0.5s; }
+.cyber-avatar .hair-strand:nth-child(3) { animation-delay:1s; }
+.cyber-avatar .hair-strand:nth-child(4) { animation-delay:1.5s; }
+.cyber-avatar .hair-strand:nth-child(5) { animation-delay:2s; }
+@keyframes hair-float { 
+  0%,100%{ transform: translateY(0) rotate(0deg); opacity:0.4; } 
+  50%{ transform: translateY(-3px) rotate(1deg); opacity:0.7; } 
+}
+
+/* Ear glows pulsing */
+.cyber-avatar .ear-glow { animation: ear-pulse 2s ease-in-out infinite; }
+@keyframes ear-pulse { 
+  0%,100%{ opacity:0.8; } 
+  50%{ opacity:1; filter: drop-shadow(0 0 6px #00f0ff); }
+}
+
+/* Cable data flow */
+.cyber-avatar .cable-flow { 
+  stroke-dasharray: 10 5; 
+  animation: data-flow 2s linear infinite; 
+}
+@keyframes data-flow { 
+  to { stroke-dashoffset: -30; } 
+}
+
+/* Face circuit lines */
+.cyber-avatar .face-circuit { 
+  stroke-dasharray: 5 3; 
+  animation: circuit-flow 3s linear infinite; 
+}
+@keyframes circuit-flow { 
+  to { stroke-dashoffset: -16; } 
+}
+
+/* Circuit dots blinking */
+.cyber-avatar .circuit-dot { animation: dot-blink 1.5s ease-in-out infinite; }
+@keyframes dot-blink { 
+  0%,100%{ opacity:0.5; } 
+  50%{ opacity:1; filter: drop-shadow(0 0 4px #ff3377); } 
+}
+
+/* Eyes - blinking */
+.cyber-avatar .eye-sclera { animation: eye-blink 5s ease-in-out infinite; transform-origin: center; }
+.cyber-avatar .eye-pupil { animation: eye-blink 5s ease-in-out infinite, pupil-glow 3s ease-in-out infinite; transform-origin: center; }
+@keyframes eye-blink { 
+  0%,48%,52%,100%{ transform: scaleY(1); } 
+  50%{ transform: scaleY(0.1); } 
+}
+@keyframes pupil-glow { 
+  0%,100%{ filter: drop-shadow(0 0 3px #00f0ff); } 
+  50%{ filter: drop-shadow(0 0 8px #00f0ff); } 
+}
+
+/* Floating particles */
+.cyber-avatar .particle { animation: particle-float 6s ease-in-out infinite; }
+.cyber-avatar .particle:nth-child(2) { animation-delay:0.5s; }
+.cyber-avatar .particle:nth-child(3) { animation-delay:1s; }
+.cyber-avatar .particle:nth-child(4) { animation-delay:1.5s; }
+.cyber-avatar .particle:nth-child(5) { animation-delay:2s; }
+.cyber-avatar .particle:nth-child(6) { animation-delay:2.5s; }
+@keyframes particle-float { 
+  0%,100%{ transform: translateY(0) translateX(0); opacity:0.3; } 
+  25%{ transform: translateY(-20px) translateX(5px); opacity:0.6; } 
+  50%{ transform: translateY(-10px) translateX(-5px); opacity:0.8; } 
+  75%{ transform: translateY(-25px) translateX(3px); opacity:0.5; } 
+}
+
+/* Entire avatar subtle breathing */
+.cyber-avatar { animation: avatar-breathe 6s ease-in-out infinite; }
+@keyframes avatar-breathe { 
+  0%,100%{ transform: translateY(0); } 
+  50%{ transform: translateY(-5px); } 
+}
+
+/* Avatar hover - intensify effects */
+.cyber-avatar:hover .aura-ring { animation-duration: 1.5s; opacity:0.3; }
+.cyber-avatar:hover .particle { animation-duration: 3s; }
+.cyber-avatar:hover svg { filter: drop-shadow(0 0 40px rgba(0,240,255,0.25)); }
 
 /* --- Stats --- */
 .stats { padding: 60px 0; }
