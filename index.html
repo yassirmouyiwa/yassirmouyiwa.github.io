@@ -88,39 +88,149 @@
         <!-- Cyber Japanese Avatar -->
         <div class="hero-avatar-area reveal" data-delay="300">
           <div class="cyber-avatar" id="cyberAvatar" aria-label="Avatar cyber japonais animé">
-            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-              <!-- Background aura -->
-              <circle class="aura-pulse" cx="150" cy="150" r="130" fill="none" stroke="var(--accent)" stroke-width="0.5" opacity="0.3"/>
-              <circle class="aura-pulse" cx="150" cy="150" r="110" fill="none" stroke="var(--accent)" stroke-width="0.3" opacity="0.2" style="animation-delay:1s"/>
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="avatar-svg">
+              <defs>
+                <!-- Neon glow filters -->
+                <filter id="glow-strong" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                  <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                  <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#4a3a6e"/>
+                  <stop offset="100%" stop-color="#2d1b4e"/>
+                </linearGradient>
+                <linearGradient id="hairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#5d4b8e"/>
+                  <stop offset="100%" stop-color="#3d2b6e"/>
+                </linearGradient>
+                <linearGradient id="visorGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.8"/>
+                  <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.8"/>
+                </linearGradient>
+                <linearGradient id="eyeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#00f0ff"/>
+                </linearGradient>
+                <mask id="eyeMask">
+                  <rect x="0" y="0" width="400" height="400" fill="white"/>
+                  <ellipse cx="130" cy="165" rx="16" ry="10" fill="black"/>
+                  <ellipse cx="170" cy="165" rx="16" ry="10" fill="black"/>
+                </mask>
+              </defs>
               
-              <!-- Head shape -->
-              <path d="M110 80 Q150 60 190 80 L190 140 Q150 170 110 140 Z" fill="var(--bg-tertiary)" stroke="var(--accent)" stroke-width="2"/>
+              <!-- Ambient aura / light rings -->
+              <circle class="aura-ring" cx="200" cy="185" r="160" fill="none" stroke="#00f0ff" stroke-width="0.5" opacity="0.15"/>
+              <circle class="aura-ring" cx="200" cy="185" r="140" fill="none" stroke="#00f0ff" stroke-width="0.3" opacity="0.1" style="animation-delay:0.5s"/>
+              <circle class="aura-ring" cx="200" cy="185" r="120" fill="none" stroke="#ff3377" stroke-width="0.3" opacity="0.08" style="animation-delay:1s"/>
               
-              <!-- Hair / Cyber helmet -->
-              <path d="M105 85 Q150 50 195 85 L200 110 Q150 90 100 110 Z" fill="var(--bg-secondary)" stroke="var(--accent)" stroke-width="1.5"/>
-              <path class="circuit-path" d="M120 95 L140 95 M160 95 L180 95 M130 105 L170 105" stroke="var(--accent)" fill="none"/>
+              <!-- Cyber hair / helmet with japanese style -->
+              <path class="hair-strand" d="M130 60 Q100 50 90 80 Q85 100 95 130"/>
+              <path class="hair-strand" d="M140 55 Q110 45 100 75 Q95 95 105 125"/>
+              <path class="hair-strand" d="M270 60 Q300 50 310 80 Q315 100 305 130"/>
+              <path class="hair-strand" d="M260 55 Q290 45 300 75 Q305 95 295 125"/>
+              <path class="hair-strand" d="M150 50 Q200 30 250 50"/>
+              <path d="M120 65 Q200 30 280 65 Q300 100 290 160 L110 160 Q100 100 120 65Z" fill="url(#hairGrad)" stroke="#00f0ff" stroke-width="1.5" filter="url(#glow-soft)"/>
               
-              <!-- Visor / Face screen -->
-              <rect x="115" y="110" width="70" height="30" rx="5" fill="var(--bg-primary)" stroke="var(--accent)" stroke-width="1.5"/>
-              <rect class="eye-glow" x="125" y="118" width="20" height="8" rx="2" fill="var(--accent)" opacity="0.9"/>
-              <rect class="eye-glow" x="155" y="118" width="20" height="8" rx="2" fill="var(--accent)" opacity="0.9" style="animation-delay:0.2s"/>
+              <!-- Hair highlight -->
+              <path d="M130 75 Q200 50 270 75 Q280 90 275 110 Q250 85 200 85 Q150 85 125 110 Q120 90 130 75Z" fill="#3d2b6e" opacity="0.5"/>
               
-              <!-- Circuit lines on face -->
-              <path class="circuit-path" d="M115 125 L135 140 M185 125 L165 140" stroke="var(--accent)" fill="none" stroke-width="1"/>
+              <!-- Cyber earpiece / headphones left -->
+              <rect x="85" y="115" width="28" height="50" rx="6" fill="url(#skinGrad)" stroke="#00f0ff" stroke-width="1.5" filter="url(#glow-soft)"/>
+              <circle cx="99" cy="128" r="6" fill="#00f0ff" filter="url(#glow-strong)" class="ear-glow"/>
+              <circle cx="99" cy="148" r="4" fill="#ff3377" filter="url(#glow-strong)" class="ear-glow" style="animation-delay:0.3s"/>
+              <!-- Cable from earpiece -->
+              <path class="cable-flow" d="M85 145 Q70 150 70 180" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.6"/>
               
-              <!-- Cyber neck and shoulders -->
-              <path d="M130 160 L130 180 L120 200 L180 200 L170 180 L170 160" fill="var(--bg-tertiary)" stroke="var(--accent)" stroke-width="1.5"/>
-              <path d="M100 200 L200 200 L210 230 L90 230 Z" fill="var(--bg-secondary)" stroke="var(--accent)" stroke-width="2"/>
+              <!-- Cyber earpiece / headphones right -->
+              <rect x="287" y="115" width="28" height="50" rx="6" fill="url(#skinGrad)" stroke="#00f0ff" stroke-width="1.5" filter="url(#glow-soft)"/>
+              <circle cx="301" cy="128" r="6" fill="#00f0ff" filter="url(#glow-strong)" class="ear-glow"/>
+              <circle cx="301" cy="148" r="4" fill="#ff3377" filter="url(#glow-strong)" class="ear-glow" style="animation-delay:0.5s"/>
+              <!-- Cable from earpiece -->
+              <path class="cable-flow" d="M315 145 Q330 150 330 180" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.6"/>
               
-              <!-- Japanese tech details -->
-              <text x="150" y="250" text-anchor="middle" fill="var(--accent)" font-family="var(--font-mono)" font-size="12" opacity="0.6" letter-spacing="3">CYBER</text>
-              <text x="150" y="265" text-anchor="middle" fill="var(--accent)" font-family="var(--font-mono)" font-size="10" opacity="0.4" letter-spacing="2">セキュリティ</text>
+              <!-- Face / head base -->
+              <path d="M120 80 Q200 55 280 80 L275 180 Q275 220 200 240 Q125 220 125 180Z" fill="url(#skinGrad)" stroke="#00f0ff" stroke-width="1.5" filter="url(#glow-soft)"/>
               
-              <!-- Animated data streams -->
-              <path class="circuit-path" d="M90 140 L70 140 L70 170" stroke="var(--accent)" fill="none" stroke-width="1.5"/>
-              <path class="circuit-path" d="M210 140 L230 140 L230 170" stroke="var(--accent)" fill="none" stroke-width="1.5" style="animation-delay:0.8s"/>
-              <circle class="circuit-path" cx="70" cy="180" r="3" fill="var(--accent)" style="animation-delay:0.4s"/>
-              <circle class="circuit-path" cx="230" cy="180" r="3" fill="var(--accent)" style="animation-delay:1.2s"/>
+              <!-- Face contour lines (cyber aesthetic) -->
+              <path d="M130 100 Q200 85 270 100" fill="none" stroke="#00f0ff" stroke-width="0.5" opacity="0.3"/>
+              <path d="M135 190 Q200 210 265 190" fill="none" stroke="#00f0ff" stroke-width="0.5" opacity="0.3"/>
+              <path d="M125 160 L135 160 M265 160 L275 160" fill="none" stroke="#00f0ff" stroke-width="0.5" opacity="0.4"/>
+              
+              <!-- Cheek blush -->
+              <ellipse cx="145" cy="190" rx="18" ry="8" fill="#ff3377" opacity="0.15" filter="url(#glow-soft)"/>
+              <ellipse cx="255" cy="190" rx="18" ry="8" fill="#ff3377" opacity="0.15" filter="url(#glow-soft)"/>
+              
+              <!-- Cyber visor / glasses -->
+              <rect x="115" y="145" width="170" height="40" rx="8" fill="url(#visorGrad)" stroke="#00f0ff" stroke-width="2" filter="url(#glow-strong)"/>
+              <line x1="200" y1="145" x2="200" y2="185" stroke="#00f0ff" stroke-width="1" opacity="0.6"/>
+              <!-- Visor reflection -->
+              <path d="M120 150 L125 148 L125 152Z" fill="#ffffff" opacity="0.8"/>
+              <path d="M275 150 L280 148 L280 152Z" fill="#ffffff" opacity="0.8"/>
+              
+              <!-- Eyes behind visor (animated) -->
+              <g class="eyes">
+                <!-- Left eye -->
+                <ellipse class="eye-sclera" cx="150" cy="165" rx="18" ry="12" fill="#0d0618" stroke="#00f0ff" stroke-width="1"/>
+                <ellipse class="eye-pupil" cx="150" cy="165" rx="10" ry="7" fill="#00f0ff" filter="url(#glow-strong)"/>
+                <circle cx="153" cy="162" r="3" fill="#ffffff" opacity="0.9"/>
+                <!-- Right eye -->
+                <ellipse class="eye-sclera" cx="250" cy="165" rx="18" ry="12" fill="#0d0618" stroke="#00f0ff" stroke-width="1"/>
+                <ellipse class="eye-pupil" cx="250" cy="165" rx="10" ry="7" fill="#00f0ff" filter="url(#glow-strong)"/>
+                <circle cx="253" cy="162" r="3" fill="#ffffff" opacity="0.9"/>
+              </g>
+              
+              <!-- Eyebrows -->
+              <path d="M135 138 Q150 132 165 138" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.7" filter="url(#glow-soft)"/>
+              <path d="M235 138 Q250 132 265 138" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.7" filter="url(#glow-soft)"/>
+              
+              <!-- Cyber mouth -->
+              <path d="M185 205 Q200 212 215 205" fill="none" stroke="#ff3377" stroke-width="1.5" opacity="0.8" filter="url(#glow-soft)"/>
+              <path d="M190 209 Q200 214 210 209" fill="none" stroke="#ff3377" stroke-width="1" opacity="0.5"/>
+              
+              <!-- Nose -->
+              <path d="M200 175 L198 195 L202 195Z" fill="#00f0ff" opacity="0.3" filter="url(#glow-soft)"/>
+              
+              <!-- Circuit / tattoo lines on face -->
+              <path class="face-circuit" d="M140 185 L145 200 L140 215" fill="none" stroke="#00f0ff" stroke-width="0.8" opacity="0.5"/>
+              <path class="face-circuit" d="M260 185 L255 200 L260 215" fill="none" stroke="#00f0ff" stroke-width="0.8" opacity="0.5"/>
+              <circle cx="140" cy="215" r="2" fill="#ff3377" filter="url(#glow-strong)" class="circuit-dot"/>
+              <circle cx="260" cy="215" r="2" fill="#ff3377" filter="url(#glow-strong)" class="circuit-dot" style="animation-delay:0.5s"/>
+              
+              <!-- Neck -->
+              <path d="M165 240 L160 280 L240 280 L235 240" fill="url(#skinGrad)" stroke="#00f0ff" stroke-width="1.5" filter="url(#glow-soft)"/>
+              <path d="M180 260 L175 280 L225 280 L220 260Z" fill="#0d0618" stroke="#00f0ff" stroke-width="0.5" opacity="0.5"/>
+              
+              <!-- Cyber collar / choker -->
+              <rect x="150" y="280" width="100" height="22" rx="4" fill="url(#skinGrad)" stroke="#00f0ff" stroke-width="2" filter="url(#glow-strong)"/>
+              <rect x="155" y="285" width="90" height="6" rx="2" fill="#00f0ff" opacity="0.6" filter="url(#glow-strong)"/>
+              <text x="200" y="298" text-anchor="middle" fill="#00f0ff" font-family="monospace" font-size="7" letter-spacing="2" filter="url(#glow-strong)">CYBER</text>
+              
+              <!-- Shoulders / jacket -->
+              <path d="M120 302 Q200 310 280 302 L310 340 Q315 345 310 350 L90 350 Q85 345 90 340Z" fill="url(#hairGrad)" stroke="#00f0ff" stroke-width="1.5" filter="url(#glow-soft)"/>
+              <!-- Collar of jacket -->
+              <path d="M120 302 L140 335 L160 305" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.6"/>
+              <path d="M280 302 L260 335 L240 305" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.6"/>
+              
+              <!-- Badge / insignia -->
+              <polygon points="200,313 205,325 217,325 208,332 211,343 200,337 189,343 192,332 183,325 195,325" fill="#ff3377" stroke="#00f0ff" stroke-width="0.5" opacity="0.8" filter="url(#glow-soft)"/>
+              
+              <!-- Japanese text floating -->
+              <text x="200" y="370" text-anchor="middle" fill="#00f0ff" font-family="monospace" font-size="10" letter-spacing="4" opacity="0.4" filter="url(#glow-soft)">サイバー · セキュリティ</text>
+              
+              <!-- Floating particles -->
+              <g class="particles">
+                <circle cx="60" cy="100" r="2" fill="#00f0ff" opacity="0.6" filter="url(#glow-strong)" class="particle"/>
+                <circle cx="340" cy="150" r="3" fill="#ff3377" opacity="0.5" filter="url(#glow-strong)" class="particle" style="animation-delay:0.5s"/>
+                <circle cx="80" cy="280" r="2" fill="#00f0ff" opacity="0.4" filter="url(#glow-strong)" class="particle" style="animation-delay:1s"/>
+                <circle cx="330" cy="300" r="2.5" fill="#ff3377" opacity="0.5" filter="url(#glow-strong)" class="particle" style="animation-delay:1.5s"/>
+                <circle cx="50" cy="200" r="1.5" fill="#00f0ff" opacity="0.6" filter="url(#glow-strong)" class="particle" style="animation-delay:2s"/>
+                <circle cx="350" cy="250" r="2" fill="#00f0ff" opacity="0.4" filter="url(#glow-strong)" class="particle" style="animation-delay:2.5s"/>
+              </g>
             </svg>
           </div>
         </div>
