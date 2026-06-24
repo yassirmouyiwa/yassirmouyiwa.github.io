@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Writeups — Moussa Yassir Mouyiwa</title>
+  <meta name="description" content="Writeups CTF, vulnérabilités et analyse de sécurité.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-gradient"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+        <a href="/" class="logo">
+        <span class="logo-bracket"><</span>MYM<span class="logo-bracket">></span>
+      </a>
+      <nav class="main-nav">
+        <a href="/#projects" id="projectsPageLink">Projets</a>
+        <a href="#home" id="writeupsPageLink" aria-current="page">Writeups</a>
+      </nav>
+      <div class="header-actions">
+        <div class="theme-dropdown" id="themeDropdown">
+          <button class="theme-toggle-btn" id="themeBtn" aria-label="Changer le thème">Theme</button>
+          <div class="theme-options">
+            <div class="theme-opt active" data-theme="dark">Sombre</div>
+            <div class="theme-opt" data-theme="light">Clair</div>
+          </div>
+        </div>
+        <button class="lang-toggle" id="langToggle" aria-label="Changer de langue">FR</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="writeups-hero" id="home">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-badge">
+            <span class="badge-dot"></span>
+            <span class="badge-text">Writeups & Analyses</span>
+          </span>
+          <h1 class="hero-title writeup-hero-title">My Writeups</h1>
+          <p class="hero-desc">Rétro-ingénierie, pwn, web exploitation, et plus encore. Documentés avec rigueur.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Writeups Section -->
+    <section class="writeups" id="writeups">
+      <div class="container">
+        <div class="section-header">
+          <h2>Tous les Writeups</h2>
+          <p>Archives complètes de mes analyses et résolutions.</p>
+        </div>
+        <div class="writeups-grid" id="writeupsList">
+          <!-- Writeups injected via JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p id="footer-text" style="margin:0;">— Documente ton trajet, partage ta perspective. —</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
