@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moussa Yassir Mouyiwa — Portfolio</title>
-  <meta name="description" content="Portfolio de Moussa Yassir Mouyiwa — Cybersécurité embarquée, Web et réseaux.">
+  <title>Moussa Yassir Mouyiwa — Security Researcher & Software Engineer</title>
+  <meta name="description" content="Portfolio de Moussa Yassir Mouyiwa — Security researcher & software engineer focused on offensive security, embedded systems, and high-performance tooling.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/avatar.css">
 </head>
 <body>
 
-  <!-- Background Grid + Gradient -->
+  <!-- Background Effects -->
   <div class="bg-grid" aria-hidden="true"></div>
   <div class="bg-gradient" aria-hidden="true"></div>
   <div class="noise-overlay" aria-hidden="true"></div>
@@ -25,29 +24,15 @@
         <span class="logo-bracket">[</span>MYM<span class="logo-bracket">]</span>
       </a>
       <nav class="main-nav" aria-label="Navigation principale">
-        <a href="#about" data-fr="À propos" data-en="About">À propos</a>
-        <a href="#projects" data-fr="Projets" data-en="Projects">Projets</a>
-        <a href="#stack" data-fr="Stack" data-en="Stack">Stack</a>
-        <a href="#certs" data-fr="Certifications" data-en="Certifications">Certifications</a>
-        <a href="writeups/" data-fr="My Writeups" data-en="My Writeups">My Writeups</a>
+        <a href="#about">À propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#stack">Stack</a>
+        <a href="./skills/">Skills</a>
+        <a href="#contact">Contact</a>
       </nav>
       <div class="header-actions">
-        <!-- Theme Toggle -->
-        <div class="theme-dropdown" id="themeDropdown">
-          <button class="theme-toggle-btn" id="themeBtn" aria-label="Changer de thème" title="Thème">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-          </button>
-          <div class="theme-options" id="themeOptions">
-            <button class="theme-opt active" data-theme="dark" title="Dark">Dark</button>
-            <button class="theme-opt" data-theme="light" title="Light">Light</button>
-          </div>
-        </div>
-        <button class="lang-toggle" id="langToggle" aria-label="Changer de langue" title="FR / EN">
-          <span class="lang-current">FR</span>
-        </button>
-        <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+        <a href="./writeups/" class="btn-header">Writeups</a>
+        <a href="./cv/" class="btn-header btn-header-primary">CV</a>
       </div>
     </div>
   </header>
@@ -55,210 +40,73 @@
   <main>
     <!-- Hero -->
     <section class="hero" id="about">
-      <div class="container hero-container">
-        <div class="hero-content">
-          <div class="hero-badge reveal">
-            <span class="badge-dot" aria-hidden="true"></span>
-            <span data-fr="Disponible pour des opportunités" data-en="Open to opportunities">Disponible pour des opportunités</span>
-          </div>
-          <h1 class="hero-title reveal" data-delay="100">
-            <span class="line">Moussa Yassir</span>
-            <span class="line">Mouyiwa</span>
-          </h1>
-          <p class="hero-subtitle reveal" data-delay="200" data-fr="Cybersécurité embarquée, Web et réseaux." data-en="Embedded cybersecurity, Web and networks.">
-            Cybersécurité embarquée, Web et réseaux.
-          </p>
-          <p class="hero-slogan reveal" data-delay="250" data-fr="Break the system to understand it, to build the ones that are solid." data-en="Break the system to understand it, to build the ones that are solid.">
-            "Break the system to understand it, to build the ones that are solid."
-          </p>
-          <p class="hero-desc reveal" data-delay="300" data-fr="Étudiant en cybersécurité embarquée, Web et réseaux." data-en="Student in embedded cybersecurity, Web and networks.">
-            Étudiant en cybersécurité embarquée, Web et réseaux.
-          </p>
-          <div class="hero-actions reveal" data-delay="400">
-            <a href="#projects" class="btn btn-primary" data-fr="Voir les projets" data-en="View projects">Voir les projets</a>
-            <a href="https://github.com/yassirmouyiwa" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              <span>GitHub</span>
-            </a>
-            <a href="https://www.linkedin.com/in/yassir-mouyiwa/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              <span>LinkedIn</span>
-            </a>
-          </div>
+      <div class="container">
+        <div class="hero-badge reveal">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>Disponible pour des opportunités</span>
         </div>
-        <!-- Cyber Japanese Avatar — Pure CSS 2D -->
-        <div class="hero-avatar-area reveal" data-delay="300">
-          <div class="cyber-avatar" aria-label="Avatar cyber japanese anime">
-            <div class="avatar-breath-shadow"></div>
-
-            <!-- Torso / Shoulders -->
-            <div class="avatar-torso">
-              <div class="avatar-collar"></div>
-            </div>
-
-            <!-- Neck -->
-            <div class="avatar-neck"></div>
-
-            <!-- Head container -->
-            <div class="avatar-head">
-              <!-- Hair behind -->
-              <div class="avatar-hair">
-                <div class="avatar-hair-l"></div>
-                <div class="avatar-hair-r"></div>
-              </div>
-
-              <!-- Hair bangs -->
-              <div class="avatar-bangs"></div>
-
-              <!-- Hair accent line -->
-              <div class="avatar-hair-accent"></div>
-
-              <!-- Japanese text -->
-              <div class="avatar-text">電子 · セキュリティ</div>
-
-              <!-- Head / Face -->
-              <div class="avatar-face"></div>
-
-              <!-- Cyber visor strip -->
-              <div class="avatar-visor"></div>
-
-              <!-- Eyebrows -->
-              <div class="avatar-eyebrow l"></div>
-              <div class="avatar-eyebrow r"></div>
-
-              <!-- Eyes -->
-              <div class="avatar-eye l">
-                <div class="avatar-eye-bg"></div>
-                <div class="avatar-iris"></div>
-                <div class="avatar-pupil"></div>
-                <div class="avatar-eye-shine"></div>
-                <div class="avatar-eye-shine-2"></div>
-              </div>
-              <div class="avatar-eye r">
-                <div class="avatar-eye-bg"></div>
-                <div class="avatar-iris"></div>
-                <div class="avatar-pupil"></div>
-                <div class="avatar-eye-shine"></div>
-                <div class="avatar-eye-shine-2"></div>
-              </div>
-
-              <!-- Nose -->
-              <div class="avatar-nose">
-                <div class="avatar-nose-tip">
-                  <div class="avatar-nostril l"></div>
-                  <div class="avatar-nostril r"></div>
-                </div>
-              </div>
-
-              <!-- Mouth — Animated smile -->
-              <div class="avatar-mouth">
-                <div class="avatar-lips">
-                  <div class="avatar-lip-top"></div>
-                  <div class="avatar-lip-bot"></div>
-                </div>
-                <div class="avatar-mouth-corner l"></div>
-                <div class="avatar-mouth-corner r"></div>
-              </div>
-
-              <!-- Blush -->
-              <div class="avatar-blush l"></div>
-              <div class="avatar-blush r"></div>
-
-              <!-- Ears -->
-              <div class="avatar-ear l"></div>
-              <div class="avatar-ear r"></div>
-
-              <!-- Circuit accents -->
-              <div class="avatar-circuit l"></div>
-              <div class="avatar-circuit r"></div>
-
-              <!-- Hologram dot -->
-              <div class="avatar-holo"></div>
-            </div>
-
-            <!-- Floating particles -->
-            <div class="avatar-particle p1"></div>
-            <div class="avatar-particle p2"></div>
-            <div class="avatar-particle p3"></div>
-            <div class="avatar-particle p4"></div>
-            <div class="avatar-particle p5"></div>
-          </div>
+        <h1 class="hero-title reveal" data-delay="100">
+          <span class="line">Moussa Yassir</span>
+          <span class="line">Mouyiwa</span>
+        </h1>
+        <p class="hero-subtitle reveal" data-delay="200">
+          Étudiant en sécurité informatique. Passionné par la cybersécurité, les systèmes embarqués et le développement.
+        </p>
+        <p class="hero-desc reveal" data-delay="300">
+          J'explore la cryptographie, les protocoles réseau et le développement bas-niveau pour construire des systèmes résilients.
+        </p>
+        <div class="hero-actions reveal" data-delay="400">
+          <a href="#projects" class="btn btn-primary">Voir les projets</a>
+          <a href="https://www.linkedin.com/in/yassir-mouyiwa" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Stats / Quick Info -->
+    <!-- Stats -->
     <section class="stats" aria-label="Quick stats">
       <div class="container stats-grid">
         <div class="stat-card reveal">
           <span class="stat-number">3</span>
-          <span class="stat-label" data-fr="Projets" data-en="Projects">Projets</span>
+          <span class="stat-label">Projets</span>
         </div>
         <div class="stat-card reveal" data-delay="100">
-          <span class="stat-number" id="certCount">--</span>
-          <span class="stat-label" data-fr="Certifications" data-en="Certifications">Certifications</span>
+          <span class="stat-number">2</span>
+          <span class="stat-label">Langues (FR/EN)</span>
         </div>
         <div class="stat-card reveal" data-delay="200">
-          <span class="stat-number" id="xpCount">1</span>
-          <span class="stat-label" data-fr="Année d'exp." data-en="Year exp.">Année d'exp.</span>
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Outils sécurité</span>
+        </div>
+        <div class="stat-card reveal" data-delay="300">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Certifications</span>
         </div>
       </div>
     </section>
 
-    <!-- Certifications & CV Section -->
-    <section class="certs" id="certs">
-      <div class="container">
-        <div class="section-header reveal">
-          <h2 data-fr="Certifications & CV" data-en="Certifications & CV">Certifications & CV</h2>
-          <p data-fr="Mes certifications et mon parcours professionnel." data-en="My certifications and professional journey.">Mes certifications et mon parcours professionnel.</p>
-        </div>
-        <div class="certs-grid reveal" data-delay="100">
-          <div class="cert-card">
-            <div class="cert-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            </div>
-            <h3 data-fr="Mon CV" data-en="My Resume">Mon CV</h3>
-            <p data-fr="Consultez mon CV pour découvrir mon parcours académique et professionnel." data-en="View my resume to discover my academic and professional journey.">Consultez mon CV pour découvrir mon parcours académique et professionnel.</p>
-            <a href="cv/" class="link-arrow" data-fr="Voir mon CV →" data-en="View my resume →">Voir mon CV →</a>
-          </div>
-          <div class="cert-card">
-            <div class="cert-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
-            </div>
-            <h3 data-fr="Certifications" data-en="Certifications">Certifications</h3>
-            <p data-fr="Liste de mes certifications en cybersécurité et réseaux." data-en="List of my certifications in cybersecurity and networks.">Liste de mes certifications en cybersécurité et réseaux.</p>
-            <a href="certifications/" class="link-arrow" data-fr="Voir mes certifications →" data-en="View my certifications →">Voir mes certifications →</a>
-          </div>
-          <div class="cert-card">
-            <div class="cert-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <h3 data-fr="Compétences" data-en="Skills">Compétences</h3>
-            <p data-fr="Langues : Français, Anglais, Arabe. Soft skills et compétences transverses." data-en="Languages: French, English, Arabic. Soft skills and cross-functional skills.">Langues : Français, Anglais, Arabe. Soft skills et compétences transverses.</p>
-            <a href="profile/" class="link-arrow" data-fr="Voir mon profil →" data-en="View my profile →">Voir mon profil →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Projects -->
+    <!-- Projects -->
     <section class="projects" id="projects">
       <div class="container">
         <div class="section-header reveal">
-          <h2 data-fr="Projets" data-en="Projects">Projets</h2>
-          <p data-fr="Sélection de travaux académiques et personnels." data-en="A selection of academic and personal work.">Sélection de travaux académiques et personnels.</p>
+          <h2>Projets</h2>
+          <p>Sélection de travaux en sécurité offensive et développement.</p>
         </div>
         <div class="projects-grid">
+          
           <!-- Project 1: Protocoles de Routage -->
           <article class="project-card reveal" data-delay="100">
             <div class="project-top">
-              <span class="project-tag academic" data-fr="Académique" data-en="Academic">Académique</span>
-              <div class="project-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              </div>
+              <span class="project-tag academic">Académique</span>
+              <span class="project-status public">Public</span>
+            </div>
+            <div class="project-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
             <h3 class="project-title">Protocoles de Routage</h3>
-            <p class="project-desc" data-fr="Simulation et analyse de RIPv1, RIPv2, OSPF et routage statique sous Cisco Packet Tracer. Rapports de configuration et tests de connectivité inter-VLAN." data-en="Simulation and analysis of RIPv1, RIPv2, OSPF and static routing under Cisco Packet Tracer. Configuration reports and inter-VLAN connectivity tests.">Simulation et analyse de RIPv1, RIPv2, OSPF et routage statique sous Cisco Packet Tracer. Rapports de configuration et tests de connectivité inter-VLAN.</p>
+            <p class="project-desc">Simulation et analyse de RIPv1, RIPv2, OSPF et routage statique sous Cisco Packet Tracer. Labs complets avec topologies et rapports de configuration.</p>
             <div class="project-stack">
               <span class="pill">Cisco Packet Tracer</span>
               <span class="pill">RIP</span>
@@ -266,42 +114,21 @@
               <span class="pill">VLAN</span>
             </div>
             <div class="project-links">
-               <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer" target="_blank" rel="noopener noreferrer" class="link-arrow" data-fr="Voir sur GitHub →" data-en="View on GitHub →">Voir sur GitHub →</a>
+              <a href="https://github.com/yassirmouyiwa/cisco-routing-packet-tracer" target="_blank" rel="noopener noreferrer" class="link-arrow">Voir sur GitHub →</a>
             </div>
           </article>
 
-          <!-- Project 2: NetScan API — DEV -->
-          <article class="project-card reveal" data-delay="150">
-            <div class="project-top">
-              <span class="project-tag dev" data-fr="En développement" data-en="In Development">En développement</span>
-              <div class="project-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-              </div>
-            </div>
-            <h3 class="project-title">NetScan API</h3>
-            <p class="project-desc" data-fr="Application Python d'une suite d'outils de réseau : analyse de domaines, scan de ports, WHOIS, DNS Lookup et géolocalisation IP. Codé en Python avec Tkinter/CTk." data-en="Python application of a network tools suite: domain analysis, port scanning, WHOIS, DNS Lookup and IP geolocation. Built with Python using Tkinter/CTk.">Application Python d'une suite d'outils de réseau : analyse de domaines, scan de ports, WHOIS, DNS Lookup et géolocalisation IP. Codé en Python avec Tkinter/CTk.</p>
-            <div class="project-stack">
-              <span class="pill">Python</span>
-              <span class="pill">Tkinter</span>
-              <span class="pill">CTk</span>
-              <span class="pill">Socket</span>
-              <span class="pill">API</span>
-            </div>
-          </article>
-
-          <!-- Project 3: Encryption Scrypt — OFFENSIF / PRIVÉ -->
+          <!-- Project 2: Encryption Scrypt -->
           <article class="project-card reveal" data-delay="200">
             <div class="project-top">
-              <div class="project-tags">
-                <span class="project-tag offensive" data-fr="Offensif" data-en="Offensive">Offensif</span>
-                <span class="project-tag restricted" data-fr="Accès sur demande" data-en="Request Access">Accès sur demande</span>
-              </div>
-              <div class="project-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              </div>
+              <span class="project-tag offensive">Offensif</span>
+              <span class="project-status private">Private</span>
+            </div>
+            <div class="project-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
             </div>
             <h3 class="project-title">Encryption with Scrypt</h3>
-            <p class="project-desc" data-fr="Implémentation Python d'un chiffrement de fichiers basé sur Scrypt (KDF) et Fernet. Support du chiffrement récursif de dossiers avec gestion de sel. Repo privé — accès sur demande." data-en="Python implementation of file encryption based on Scrypt (KDF) and Fernet. Supports recursive folder encryption with salt management. Private repo — access on request.">Implémentation Python d'un chiffrement de fichiers basé sur Scrypt (KDF) et Fernet. Support du chiffrement récursif de dossiers avec gestion de sel. Repo privé — accès sur demande.</p>
+            <p class="project-desc">Implémentation Python d'un chiffrement de fichiers basé sur Scrypt (KDF) et Fernet. Chiffrement récursif de dossiers avec gestion de sel.</p>
             <div class="project-stack">
               <span class="pill">Python</span>
               <span class="pill">Cryptography</span>
@@ -309,7 +136,29 @@
               <span class="pill">Fernet</span>
             </div>
             <div class="project-links">
-              <a href="mailto:yassirmoussa754@gmail.com?subject=Requête%20d'accès%20-%20Encryption%20with%20Scrypt" class="link-arrow" data-fr="Requête d'accès →" data-en="Request access →">Requête d'accès →</a>
+              <a href="mailto:yassirmoussa754@gmail.com" class="link-arrow">Demander l'accès →</a>
+            </div>
+          </article>
+
+          <!-- Project 3: NetScan API -->
+          <article class="project-card reveal" data-delay="300">
+            <div class="project-top">
+              <span class="project-tag academic">Académique</span>
+              <span class="project-status dev">En Développement</span>
+            </div>
+            <div class="project-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </div>
+            <h3 class="project-title">NetScan API</h3>
+            <p class="project-desc">API de scan réseau et reconnaissance pour pentesting. Collecte d'informations sur les hôtes, services ouverts et vulnérabilités potentielles.</p>
+            <div class="project-stack">
+              <span class="pill">Python</span>
+              <span class="pill">API</span>
+              <span class="pill">Network</span>
+              <span class="pill">Pentesting</span>
+            </div>
+            <div class="project-links">
+              <a href="mailto:yassirmoussa754@gmail.com" class="link-arrow">Demander l'accès →</a>
             </div>
           </article>
 
@@ -317,86 +166,110 @@
       </div>
     </section>
 
-    <!-- Stack -->
+    <!-- Stack / Skills -->
     <section class="stack" id="stack">
       <div class="container">
         <div class="section-header reveal">
-          <h2 data-fr="Stack Technique" data-en="Tech Stack">Stack Technique</h2>
-          <p data-fr="Outils et technologies que j'utilise au quotidien." data-en="Tools and technologies I use on a daily basis.">Outils et technologies que j'utilise au quotidien.</p>
+          <h2>Stack Technique</h2>
+          <p>Technologies et outils maîtrisés.</p>
         </div>
-        <div class="stack-grid reveal" data-delay="100">
+        <div class="stack-grid reveal">
+          
           <div class="stack-category">
-            <h4 data-fr="Langages" data-en="Languages">Langages</h4>
-            <div class="stack-items">
-              <span class="pill pill-lg">Python</span>
-              <span class="pill pill-lg">C</span>
-              <span class="pill pill-lg">C++</span>
-              <span class="pill pill-lg">Bash</span>
+            <h4 class="stack-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Pentesting
+            </h4>
+            <div class="stack-pills">
+              <span class="pill">Vulnerability Research</span>
+              <span class="pill">Protocol Fuzzing</span>
+              <span class="pill">CTF</span>
+              <span class="pill">Custom Tooling</span>
             </div>
           </div>
+
           <div class="stack-category">
-            <h4 data-fr="Sécurité & Réseau" data-en="Security & Network">Sécurité & Réseau</h4>
-            <div class="stack-items">
-              <span class="pill pill-lg">Wireshark</span>
-              <span class="pill pill-lg">Nmap</span>
-              <span class="pill pill-lg">Cisco PT</span>
+            <h4 class="stack-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              Programming
+            </h4>
+            <div class="stack-pills">
+              <span class="pill">Python</span>
+              <span class="pill">C</span>
+              <span class="pill">C++</span>
+              <span class="pill">Bash</span>
             </div>
           </div>
+
           <div class="stack-category">
-            <h4 data-fr="Systèmes & Outils" data-en="Systems & Tools">Systèmes & Outils</h4>
-            <div class="stack-items">
-              <span class="pill pill-lg">Linux</span>
-              <span class="pill pill-lg">Git</span>
-              <span class="pill pill-lg">VS Code</span>
+            <h4 class="stack-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+              Pentesting Tools
+            </h4>
+            <div class="stack-pills">
+              <span class="pill">Wireshark</span>
+              <span class="pill">Nmap</span>
+              <span class="pill">Burp Suite</span>
+              <span class="pill">Metasploit</span>
+              <span class="pill">Nikto</span>
+              <span class="pill">Gobuster</span>
+              <span class="pill">Kali Linux</span>
             </div>
           </div>
+
           <div class="stack-category">
-            <h4 data-fr="Intérêts" data-en="Interests">Intérêts</h4>
-            <div class="stack-items">
-              <span class="pill pill-lg">Cryptographie</span>
-              <span class="pill pill-lg">Reverse</span>
-              <span class="pill pill-lg">Forensics</span>
-              <span class="pill pill-lg">IoT</span>
+            <h4 class="stack-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
+              Networks
+            </h4>
+            <div class="stack-pills">
+              <span class="pill">Cisco</span>
+              <span class="pill">OSPF</span>
+              <span class="pill">RIP</span>
+              <span class="pill">VLAN</span>
+              <span class="pill">Firewall</span>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Certifications -->
-    <section class="certs" id="certs">
-      <div class="container">
-        <div class="section-header reveal">
-          <h2 data-fr="Certifications" data-en="Certifications">Certifications</h2>
-          <p data-fr="Mes certifications en cybersécurité et réseaux." data-en="My certifications in cybersecurity and networking.">Mes certifications en cybersécurité et réseaux.</p>
+    <!-- Contact / Footer -->
+    <footer class="site-footer" id="contact">
+      <div class="container footer-content">
+        <div class="footer-info">
+          <h3>Moussa Yassir Mouyiwa</h3>
+          <p>Étudiant en sécurité informatique</p>
+          <p class="footer-location">📍 Based in Morocco</p>
+          <p class="footer-location">📞 +212 775 930796</p>
         </div>
-        <div style="display:flex; justify-content:center; margin-top:24px;">
-          <div style="text-align:center;">
-            <div style="font-size:48px; font-weight:700; color:hsl(var(--accent)); line-height:1;">--</div>
-            <div style="margin-top:8px;" data-fr="Certifications obtenues" data-en="Certifications earned">Certifications obtenues</div>
+        <div class="footer-links-grid">
+          <div class="footer-column">
+            <h4>Navigation</h4>
+            <a href="#about">À propos</a>
+            <a href="#projects">Projets</a>
+            <a href="#stack">Stack</a>
+          </div>
+          <div class="footer-column">
+            <h4>Pages</h4>
+            <a href="./cv/">CV</a>
+            <a href="./writeups/">Writeups</a>
+            <a href="./skills/">Skills</a>
+          </div>
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <a href="https://github.com/yassirmouyiwa" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/yassir-mouyiwa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://profile.hackthebox.com/profile/019c6d0e-bd46-7238-8cc9-fa9795f9416d" target="_blank" rel="noopener noreferrer">HackTheBox</a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Contact / CTA -->
-    <section class="contact" id="contact">
-      <div class="container contact-inner reveal">
-        <h2 data-fr="Intéressé par un projet ou une collaboration ?" data-en="Interested in a project or collaboration?">Intéressé par un projet ou une collaboration ?</h2>
-        <p data-fr="Disponible pour des stages, des collaborations académiques ou des projets open-source dans le domaine de la cybersécurité." data-en="Available for internships, academic collaborations or open-source projects in the field of cybersecurity.">Disponible pour des stages, des collaborations académiques ou des projets open-source dans le domaine de la cybersécurité.</p>
-        <div class="contact-actions">
-          <a href="mailto:yassirmoussa754@gmail.com" class="btn btn-primary" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
-          <a href="https://github.com/yassirmouyiwa" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            <span>GitHub</span>
-          </a>
-          <a href="https://www.linkedin.com/in/yassir-mouyiwa/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            <span>LinkedIn</span>
-          </a>
+        <div class="footer-bottom">
+          <p>© 2026 Moussa Yassir Mouyiwa. All rights reserved.</p>
+          <p class="footer-tagline">"The only way to do great work is to love what you do."</p>
         </div>
       </div>
-    </section>
+    </footer>
   </main>
 
   <script src="assets/js/main.js"></script>
