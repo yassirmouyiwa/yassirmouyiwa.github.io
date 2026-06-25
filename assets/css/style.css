@@ -127,13 +127,13 @@ button {
 /* --- Survey Corps Emblem Background --- */
 .survey-corps-emblem {
   position: fixed;
-  left: 0;
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%) rotate(-15deg);
-  width: 600px;
-  height: 100vh;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
   z-index: -1;
-  opacity: 0.15;
+  opacity: 0.1;
   pointer-events: none;
   background-image: url('https://i.pinimg.com/1200x/7c/c7/5f/7cc75f483f501023d91e1e2f38b7317f.jpg');
   background-size: contain;
