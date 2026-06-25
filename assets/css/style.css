@@ -124,6 +124,22 @@ button {
   color: inherit;
 }
 
+/* --- Survey Corps Emblem Background --- */
+.survey-corps-emblem {
+  position: fixed;
+  right: -80px;
+  bottom: 10%;
+  width: 400px;
+  height: 400px;
+  background-image: url('https://static.wikia.nocookie.net/attackontitan/images/6/63/Seele_Ost_Logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.08;
+  z-index: -1;
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
 /* --- Background Effects --- */
 .bg-grid {
   position: fixed;
