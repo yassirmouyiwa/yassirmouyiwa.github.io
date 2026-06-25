@@ -127,24 +127,17 @@ button {
 /* --- Survey Corps Emblem Background --- */
 .survey-corps-emblem {
   position: fixed;
-  right: -40px;
-  bottom: 5%;
-  width: 400px;
-  height: 400px;
+  right: -100px;
+  bottom: -50px;
+  width: 600px;
+  height: 600px;
   z-index: -1;
-  opacity: 0.15;
+  opacity: 0.25;
   pointer-events: none;
-  transform: rotate(-8deg);
-  filter: sepia(1) saturate(300%) hue-rotate(10deg);
-}
-
-/* CSS-only Survey Corps wings emblem */
-.survey-corps-emblem::before {
-  content: '🦅';
-  font-size: 320px;
-  display: block;
-  line-height: 1;
-  filter: drop-shadow(0 0 30px rgba(255, 100, 50, 0.4));
+  transform: rotate(-10deg);
+  background-image: url('https://i.pinimg.com/1200x/4d/b2/3e/4db23eaf339329b3c26033719b4eda06.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* --- Background Effects --- */
